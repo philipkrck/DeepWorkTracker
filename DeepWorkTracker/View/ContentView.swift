@@ -17,7 +17,7 @@ struct ContentView: View {
                     Text("Start")
                 }
             
-            Text("Sessions")
+            SessionOverviewView()
                 .tabItem {
                     Image(systemName: "list.dash")
                     Text("Sessions")
