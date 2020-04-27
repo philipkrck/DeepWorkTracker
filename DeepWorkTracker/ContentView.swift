@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            Text("Prepare Session")
+            PrepareSessionView()
                 .tabItem {
                     Image(systemName: "timer")
                     Text("Start")

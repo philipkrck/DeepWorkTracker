@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2ADAA8E24572D7C00C7EAC1 /* PrepareSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADAA8D24572D7C00C7EAC1 /* PrepareSessionView.swift */; };
 		A2F9B8002444805300E4F116 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F9B7FF2444805300E4F116 /* AppDelegate.swift */; };
 		A2F9B8022444805300E4F116 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F9B8012444805300E4F116 /* SceneDelegate.swift */; };
 		A2F9B8042444805300E4F116 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F9B8032444805300E4F116 /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A2ADAA8D24572D7C00C7EAC1 /* PrepareSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareSessionView.swift; sourceTree = "<group>"; };
 		A2F9B7FC2444805300E4F116 /* DeepWorkTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepWorkTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2F9B7FF2444805300E4F116 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2F9B8012444805300E4F116 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				A2F9B7FF2444805300E4F116 /* AppDelegate.swift */,
 				A2F9B8012444805300E4F116 /* SceneDelegate.swift */,
+				A2ADAA8D24572D7C00C7EAC1 /* PrepareSessionView.swift */,
 				A2F9B8032444805300E4F116 /* ContentView.swift */,
 				A2F9B8052444805500E4F116 /* Assets.xcassets */,
 				A2F9B80A2444805500E4F116 /* LaunchScreen.storyboard */,
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2F9B8002444805300E4F116 /* AppDelegate.swift in Sources */,
+				A2ADAA8E24572D7C00C7EAC1 /* PrepareSessionView.swift in Sources */,
 				A2F9B8022444805300E4F116 /* SceneDelegate.swift in Sources */,
 				A2F9B8042444805300E4F116 /* ContentView.swift in Sources */,
 			);
