@@ -16,21 +16,26 @@ enum SessionType: String {
 struct PrepareSessionView: View {
     
     @State private var sessionTypes: [SessionType] = [.openEnded, .timer]
-    @State private var sessionType = 0
+    @State private var sessionTypeIndex = 0
+    @State private var showingTimerView = false
+    
+    private var sessionType: SessionType {
+        sessionTypes[sessionTypeIndex]
+    }
 
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Session Type")) {
-                    Picker("One", selection: $sessionType.animation()) {
+                    Picker("One", selection: $sessionTypeIndex.animation()) {
                         ForEach(0..<sessionTypes.count) {
                             Text("\(self.sessionTypes[$0].rawValue)")
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
                     
-                    if sessionType == 1 {
-                        NavigationLink(destination: Text("To be added")) {
+                    if sessionType == .timer {
+                        NavigationLink(destination: SetDurationView()) {
                             HStack {
                                 Text("Set duration")
                                 Spacer()
@@ -42,13 +47,15 @@ struct PrepareSessionView: View {
                 }
                 
                 Section(header: Text("Category")) {
-                    NavigationLink(destination: Text("Choose category")) {
+                    NavigationLink(destination: CategoryView()) {
                         HStack {
-                            Circle()
-                                .frame(width: 20, height: 20)
-                                .foregroundColor(.red)
                             Text("Choose Category")
                             Spacer()
+                            HStack {
+                                Circle()
+                                    .frame(width: 16, height: 16)
+                                    .foregroundColor(.red)
+                            }
                             Text("Default")
                                 .foregroundColor(.secondary)
                         }
@@ -56,11 +63,13 @@ struct PrepareSessionView: View {
                 }
                 
                 Button("Start Session") {
-                    print("Start session")
+                    self.showingTimerView = true
                 }
-
             }
             .navigationBarTitle("Prepare session")
+            .sheet(isPresented: $showingTimerView) {
+                TimerView()
+            }
         }
     }
 }
