@@ -26,32 +26,35 @@ extension Session {
 }
 
 struct SessionOverviewView: View {
-    let sessions: [Session] = [Session.sample]
+    var sessions: [Session] = [Session.sample]
     
     @State private var showingAddSessionView = false
     
     var body: some View {
         NavigationView {
-            List(sessions) { session in
-                NavigationLink(destination: EditSessionView()) {
-                    HStack {
-                        Circle()
-                            .frame(width: 16, height: 16)
-                            .foregroundColor(session.category.color)
-                        VStack(alignment: .leading) {
-                            Text(session.category.name)
-                            Text(session.formattedDate)
+            List {
+                ForEach(sessions, id: \.id) { session in
+                    NavigationLink(destination: EditSessionView()) {
+                        HStack {
+                            Circle()
+                                .frame(width: 16, height: 16)
+                                .foregroundColor(session.category.color)
+                            VStack(alignment: .leading) {
+                                Text(session.category.name)
+                                Text(session.formattedDate)
+                                    .foregroundColor(.secondary)
+                                    .font(.caption)
+                            }
+                            Spacer()
+                            Text("50 mins")
                                 .foregroundColor(.secondary)
-                                .font(.caption)
                         }
-                        Spacer()
-                        Text("50 mins")
-                            .foregroundColor(.secondary)
                     }
                 }
+                .onDelete(perform: removeSession)
             }
             .navigationBarTitle("Completed Sessions")
-            .navigationBarItems(trailing:
+            .navigationBarItems(leading: !sessions.isEmpty ? EditButton(): nil, trailing:
                 Button(action: {
                     self.showingAddSessionView = true
                 }) {
@@ -61,6 +64,10 @@ struct SessionOverviewView: View {
                 AddSessionView()
             }
         }
+    }
+    
+    private func removeSession(at offsets: IndexSet) {
+        // todo: remove sessions
     }
 }
 
