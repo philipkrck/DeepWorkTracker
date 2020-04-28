@@ -9,7 +9,9 @@
 import SwiftUI
 
 struct TimerView: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.presentationMode) var presentationMode
+    
     @State var duration: TimeInterval
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     let category: Category_Old
@@ -29,14 +31,23 @@ struct TimerView: View {
             .navigationBarTitle("Deep Work")
             .onReceive(timer, perform: { time in
                 guard self.duration > 0 else {
-                    // todo: cancel timer
                     self.timer.upstream.connect().cancel()
+                    self.saveSession()
                     self.presentationMode.wrappedValue.dismiss()
                     return
                 }
                 self.duration -= 1
             })
         }
+    }
+    
+    private func saveSession() {
+        let session = Session(context: managedObjectContext)
+        session.id = UUID()
+        session.date = Date()
+        session.duration = duration
+        
+        try? managedObjectContext.save()
     }
 }
 

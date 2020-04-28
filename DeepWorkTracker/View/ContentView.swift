@@ -9,9 +9,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
     var body: some View {
         TabView {
             PrepareSessionView()
+                .environment(\.managedObjectContext, managedObjectContext)
                 .tabItem {
                     Image(systemName: "timer")
                     Text("Start")

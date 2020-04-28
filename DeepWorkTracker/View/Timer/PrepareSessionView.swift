@@ -14,12 +14,13 @@ enum SessionType: String {
 }
 
 struct PrepareSessionView: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
     
     @State private var sessionTypes: [SessionType] = [.openEnded, .timer]
     @State private var sessionTypeIndex = 0
     @State private var showingTimerView = false
     
-    @State private var selectedDuration: TimeInterval = 50 * 60
+    @State private var selectedDuration: TimeInterval = 5// 50 * 60
     @State private var selectedCategoryIndex = 0
 
     
@@ -77,8 +78,8 @@ struct PrepareSessionView: View {
             .navigationBarTitle("Prepare session")
             .sheet(isPresented: $showingTimerView) {
                 self.sessionType == .openEnded
-                    ? AnyView(OpenEndedTimerView(category: self.selectedCategory))
-                    : AnyView(TimerView(duration: self.selectedDuration, category: self.selectedCategory))
+                    ? AnyView(OpenEndedTimerView(category: self.selectedCategory).environment(\.managedObjectContext, self.managedObjectContext))
+                    : AnyView(TimerView(duration: self.selectedDuration, category: self.selectedCategory).environment(\.managedObjectContext, self.managedObjectContext))
             }
         }
     }

@@ -18,6 +18,7 @@
 		A2ADAA9D245764FA00C7EAC1 /* SessionOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADAA9C245764FA00C7EAC1 /* SessionOverviewView.swift */; };
 		A2ADAAA12457692800C7EAC1 /* EditSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADAAA02457692800C7EAC1 /* EditSessionView.swift */; };
 		A2ADAAA324576F8A00C7EAC1 /* AddSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADAAA224576F8A00C7EAC1 /* AddSessionView.swift */; };
+		A2E1F0722458A86300DE313D /* DeepWorkTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A2E1F0702458A86300DE313D /* DeepWorkTracker.xcdatamodeld */; };
 		A2F9B8002444805300E4F116 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F9B7FF2444805300E4F116 /* AppDelegate.swift */; };
 		A2F9B8022444805300E4F116 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F9B8012444805300E4F116 /* SceneDelegate.swift */; };
 		A2F9B8042444805300E4F116 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F9B8032444805300E4F116 /* ContentView.swift */; };
@@ -38,6 +39,7 @@
 		A2ADAA9C245764FA00C7EAC1 /* SessionOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionOverviewView.swift; sourceTree = "<group>"; };
 		A2ADAAA02457692800C7EAC1 /* EditSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSessionView.swift; sourceTree = "<group>"; };
 		A2ADAAA224576F8A00C7EAC1 /* AddSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSessionView.swift; sourceTree = "<group>"; };
+		A2E1F0712458A86300DE313D /* DeepWorkTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DeepWorkTracker.xcdatamodel; sourceTree = "<group>"; };
 		A2F9B7FC2444805300E4F116 /* DeepWorkTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepWorkTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2F9B7FF2444805300E4F116 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2F9B8012444805300E4F116 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A2E1F0732458A86900DE313D /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A2E1F0702458A86300DE313D /* DeepWorkTracker.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		A2F9B7F32444805300E4F116 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +155,7 @@
 				A2F9B80A2444805500E4F116 /* LaunchScreen.storyboard */,
 				A2F9B80D2444805500E4F116 /* Info.plist */,
 				A2F9B8072444805500E4F116 /* Preview Content */,
+				A2E1F0732458A86900DE313D /* CoreData */,
 			);
 			path = DeepWorkTracker;
 			sourceTree = "<group>";
@@ -236,6 +247,7 @@
 				A2ADAA9724573C7A00C7EAC1 /* ChooseCategoryView.swift in Sources */,
 				A2ADAA9924574A8900C7EAC1 /* AddCategoryView.swift in Sources */,
 				A2ADAAA12457692800C7EAC1 /* EditSessionView.swift in Sources */,
+				A2E1F0722458A86300DE313D /* DeepWorkTracker.xcdatamodeld in Sources */,
 				A20F0E0E245868D30067CE60 /* TimerView.swift in Sources */,
 				A2ADAA8E24572D7C00C7EAC1 /* PrepareSessionView.swift in Sources */,
 				A2F9B8022444805300E4F116 /* SceneDelegate.swift in Sources */,
@@ -444,6 +456,19 @@
 			productName = FoundationExtensions;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		A2E1F0702458A86300DE313D /* DeepWorkTracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A2E1F0712458A86300DE313D /* DeepWorkTracker.xcdatamodel */,
+			);
+			currentVersion = A2E1F0712458A86300DE313D /* DeepWorkTracker.xcdatamodel */;
+			path = DeepWorkTracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A2F9B7F42444805300E4F116 /* Project object */;
 }

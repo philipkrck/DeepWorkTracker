@@ -8,10 +8,14 @@
 
 import SwiftUI
 import FoundationExtensions
+import CoreData
 
 struct OpenEndedTimerView: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.presentationMode) var presentationMode
+    
     @State private var timeSinceStart: TimeInterval = 0
+    
     let category: Category_Old
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -31,8 +35,7 @@ struct OpenEndedTimerView: View {
             .navigationBarTitle("Deep Work")
             .navigationBarItems(trailing:
                 Button("Save") {
-                    // todo: save the session
-                    print("saving session")
+                    self.saveSession()
                     
                     self.presentationMode.wrappedValue.dismiss()
                 }
@@ -41,6 +44,16 @@ struct OpenEndedTimerView: View {
         .onReceive(timer) { time in
             self.timeSinceStart += 1
         }
+    }
+    
+    private func saveSession() {
+        let session = Session(context: managedObjectContext)
+        session.id = UUID()
+        session.date = Date()
+        session.duration = timeSinceStart
+        // todo: add category to session
+        
+        try? managedObjectContext.save()
     }
 }
 

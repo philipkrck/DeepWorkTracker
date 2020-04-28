@@ -37,6 +37,11 @@ public extension TimeInterval {
     }
     
     var formattedSpokenTime: String {
+        guard self > 60 else {
+            let secondsPostfix = self == 1 ? "second" : "seconds"
+            return "\(seconds) " + secondsPostfix
+        }
+        
         var formattedHours = ""
         var formattedMinutes = ""
         let space = (hours >= 1 && minutes >= 1) ? " " : ""

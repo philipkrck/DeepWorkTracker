@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+// TODO: remove and replace with Core Data model
 struct Session_Old: Identifiable {
     let id = UUID()
     let date: Date
@@ -25,8 +26,11 @@ extension Session_Old {
     }
 }
 
+
+
 struct SessionOverviewView: View {
-    var sessions: [Session_Old] = [Session_Old.sample]
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(entity: Session.entity(), sortDescriptors: []) var sessions: FetchedResults<Session>
     
     @State private var showingAddSessionView = false
     
@@ -38,15 +42,15 @@ struct SessionOverviewView: View {
                         HStack {
                             Circle()
                                 .frame(width: 16, height: 16)
-                                .foregroundColor(session.category.color)
+                                .foregroundColor(.red) // todo: add color from category
                             VStack(alignment: .leading) {
-                                Text(session.category.name)
-                                Text(session.formattedDate)
+                                Text("Category name") // todo: add name from category
+                                Text(session.date?.formatted ?? "") // todo: add formatted date
                                     .foregroundColor(.secondary)
                                     .font(.caption)
                             }
                             Spacer()
-                            Text("50 mins")
+                            Text(session.duration.formattedSpokenTime)
                                 .foregroundColor(.secondary)
                         }
                     }
@@ -74,5 +78,13 @@ struct SessionOverviewView: View {
 struct SessionOverviewView_Previews: PreviewProvider {
     static var previews: some View {
         SessionOverviewView()
+    }
+}
+
+extension Date {
+    var formatted: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        return formatter.string(from: self)
     }
 }
