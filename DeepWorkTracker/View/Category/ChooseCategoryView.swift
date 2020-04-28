@@ -14,25 +14,28 @@ struct Category: Identifiable, Equatable {
     var color: Color
 }
 
-struct CategoryView: View {
-    var categories = [Category(name: "Default", color: .red), Category(name: "Learn SwiftUI", color: .orange), Category(name: "CS Degree", color: .purple)]
+extension Category {
+    static var defaults = [Category(name: "Default", color: .red), Category(name: "Learn SwiftUI", color: .orange), Category(name: "CS Degree", color: .purple)]
+}
+
+struct ChooseCategoryView: View {
     
-    @State private var selectedCategoryIndex = 0
+    @Binding var selectedCategoryIndex: Int
     @State private var showingAddCategoryView = false
     
     var body: some View {
         Form {
-            ForEach(0..<categories.count) { categoryIndex in
+            ForEach(0..<Category.defaults.count) { categoryIndex in
                 HStack {
                     Circle()
                         .frame(width: 16, height: 16)
-                        .foregroundColor(self.categories[categoryIndex].color)
-                    Text(self.categories[categoryIndex].name)
+                        .foregroundColor(Category.defaults[categoryIndex].color)
+                    Text(Category.defaults[categoryIndex].name)
                     Spacer()
                     
                     if categoryIndex == self.selectedCategoryIndex {
                         Image(systemName: "checkmark")
-                            .foregroundColor(self.categories[categoryIndex].color)
+                            .foregroundColor(Category.defaults[categoryIndex].color)
                             .frame(width: 16, height: 16)
                     }
                 }
@@ -62,6 +65,6 @@ struct CategoryView: View {
 
 struct CategoryView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryView()
+        ChooseCategoryView(selectedCategoryIndex: .constant(0))
     }
 }

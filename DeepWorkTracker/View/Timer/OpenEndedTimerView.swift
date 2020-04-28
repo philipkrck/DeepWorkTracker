@@ -17,26 +17,30 @@ struct OpenEndedTimerView: View {
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        VStack {
-            Text(timeSinceStart.formattedDigitalTime)
-                .font(.largeTitle)
-            HStack {
-                Circle()
-                    .frame(width: 16, height: 16)
-                    .foregroundColor(category.color)
-                Text(category.name)
+        NavigationView {
+            VStack {
+                Text(timeSinceStart.formattedDigitalTime)
+                    .font(.largeTitle)
+                HStack {
+                    Circle()
+                        .frame(width: 16, height: 16)
+                        .foregroundColor(category.color)
+                    Text(category.name)
+                }
             }
+            .navigationBarTitle("Deep Work")
+            .navigationBarItems(trailing:
+                Button("Save") {
+                    // todo: save the session
+                    print("saving session")
+                    
+                    self.presentationMode.wrappedValue.dismiss()
+                }
+            )
         }
         .onReceive(timer) { time in
             self.timeSinceStart += 1
         }
-        .navigationBarTitle("Deep Work")
-        .navigationBarItems(trailing:
-            Button("Save") {
-                // todo: save the session
-                self.presentationMode.wrappedValue.dismiss()
-            }
-        )
     }
 }
 

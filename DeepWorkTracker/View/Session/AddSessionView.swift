@@ -21,28 +21,28 @@ struct AddSessionView: View {
                 DatePicker("date: ", selection: $date, displayedComponents: .date)
                 
                 NavigationLink(destination: SetDurationView(timeInterval: $selectedDuration)) {
-                        HStack {
-                            Text("Set duration")
-                            Spacer()
-                            Text("50 min")
-                                .foregroundColor(.secondary)
-                        }
+                    HStack {
+                        Text("Set duration")
+                        Spacer()
+                        Text("50 min")
+                            .foregroundColor(.secondary)
                     }
+                }
                 
                 
-                    NavigationLink(destination: CategoryView()) {
+                NavigationLink(destination: ChooseCategoryView(selectedCategoryIndex: .constant(0))) {
+                    HStack {
+                        Text("Choose Category")
+                        Spacer()
                         HStack {
-                            Text("Choose Category")
-                            Spacer()
-                            HStack {
-                                Circle()
-                                    .frame(width: 16, height: 16)
-                                    .foregroundColor(.red)
-                            }
-                            Text("Default")
-                                .foregroundColor(.secondary)
+                            Circle()
+                                .frame(width: 16, height: 16)
+                                .foregroundColor(.red)
                         }
+                        Text("Default")
+                            .foregroundColor(.secondary)
                     }
+                }
             }
             .navigationBarTitle("Record Session")
             .navigationBarItems(trailing:

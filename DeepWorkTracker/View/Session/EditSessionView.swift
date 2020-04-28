@@ -25,7 +25,7 @@ struct EditSessionView: View {
             }
         
         
-            NavigationLink(destination: CategoryView()) {
+            NavigationLink(destination: ChooseCategoryView(selectedCategoryIndex: .constant(0))) {
                 HStack {
                     Text("Choose Category")
                     Spacer()

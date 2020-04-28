@@ -15,26 +15,28 @@ struct TimerView: View {
     let category: Category
     
     var body: some View {
-        VStack {
-            Text(duration.formattedDigitalTime)
-                .font(.largeTitle)
-            HStack {
-                Circle()
-                    .frame(width: 16, height: 16)
-                    .foregroundColor(category.color)
-                Text(category.name)
+        NavigationView {
+            VStack {
+                Text(duration.formattedDigitalTime)
+                    .font(.largeTitle)
+                HStack {
+                    Circle()
+                        .frame(width: 16, height: 16)
+                        .foregroundColor(category.color)
+                    Text(category.name)
+                }
             }
+            .navigationBarTitle("Deep Work")
+            .onReceive(timer, perform: { time in
+                guard self.duration > 0 else {
+                    // todo: cancel timer
+                    self.timer.upstream.connect().cancel()
+                    self.presentationMode.wrappedValue.dismiss()
+                    return
+                }
+                self.duration -= 1
+            })
         }
-        .navigationBarTitle("Deep Work")
-        .onReceive(timer, perform: { time in
-            guard self.duration > 0 else {
-                // todo: cancel timer
-                self.timer.upstream.connect().cancel()
-                self.presentationMode.wrappedValue.dismiss()
-                return
-            }
-            self.duration -= 1
-        })
     }
 }
 

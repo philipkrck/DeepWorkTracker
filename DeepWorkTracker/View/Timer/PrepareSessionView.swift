@@ -20,9 +20,15 @@ struct PrepareSessionView: View {
     @State private var showingTimerView = false
     
     @State private var selectedDuration: TimeInterval = 50 * 60
+    @State private var selectedCategoryIndex = 0
+
     
     private var sessionType: SessionType {
         sessionTypes[sessionTypeIndex]
+    }
+    
+    private var selectedCategory: Category {
+        Category.defaults[selectedCategoryIndex]
     }
 
     var body: some View {
@@ -49,16 +55,16 @@ struct PrepareSessionView: View {
                 }
                 
                 Section(header: Text("Category")) {
-                    NavigationLink(destination: CategoryView()) {
+                    NavigationLink(destination: ChooseCategoryView(selectedCategoryIndex: $selectedCategoryIndex)) {
                         HStack {
                             Text("Choose Category")
                             Spacer()
                             HStack {
                                 Circle()
                                     .frame(width: 16, height: 16)
-                                    .foregroundColor(.red)
+                                    .foregroundColor(selectedCategory.color)
                             }
-                            Text("Default")
+                            Text(selectedCategory.name)
                                 .foregroundColor(.secondary)
                         }
                     }
@@ -71,8 +77,8 @@ struct PrepareSessionView: View {
             .navigationBarTitle("Prepare session")
             .sheet(isPresented: $showingTimerView) {
                 self.sessionType == .openEnded
-                    ? AnyView(OpenEndedTimerView(category: Category(name: "Default", color: .red)))
-                    : AnyView(TimerView(duration: self.selectedDuration, category: Category(name: "Default", color: .red)))
+                    ? AnyView(OpenEndedTimerView(category: self.selectedCategory))
+                    : AnyView(TimerView(duration: self.selectedDuration, category: self.selectedCategory))
             }
         }
     }
