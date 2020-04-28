@@ -41,7 +41,7 @@ struct PrepareSessionView: View {
                             HStack {
                                 Text("Set duration")
                                 Spacer()
-                                Text(selectedDuration.formattedDigitalTime)
+                                Text(selectedDuration.formattedSpokenTime)
                                     .foregroundColor(.secondary)
                             }
                         }
@@ -72,7 +72,7 @@ struct PrepareSessionView: View {
             .sheet(isPresented: $showingTimerView) {
                 self.sessionType == .openEnded
                     ? AnyView(OpenEndedTimerView(category: Category(name: "Default", color: .red)))
-                    : AnyView(TimerView(duration: 5, category: Category(name: "Default", color: .red)))
+                    : AnyView(TimerView(duration: self.selectedDuration, category: Category(name: "Default", color: .red)))
             }
         }
     }

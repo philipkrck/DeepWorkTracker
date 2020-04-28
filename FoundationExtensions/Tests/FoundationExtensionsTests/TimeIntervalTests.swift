@@ -55,4 +55,14 @@ class TimeIntervalTests: XCTestCase {
         XCTAssertEqual(fortyOneMinutes.formattedDigitalTime, "41:00")
         XCTAssertEqual(sixteenSeconds.formattedDigitalTime, "00:16")
     }
+    
+    func testFormatFormattedSpokenTime() {
+        let fiveHoursfortyFourMinsFiftyEightSeconds: TimeInterval = 5*3600 + 44*60 + 58
+        let fortyOneMinutes: TimeInterval = 41*60
+        let oneHour: TimeInterval = 3600
+        
+        XCTAssertEqual(fiveHoursfortyFourMinsFiftyEightSeconds.formattedSpokenTime, "5 hours 44 minutes")
+        XCTAssertEqual(fortyOneMinutes.formattedSpokenTime, "41 minutes")
+        XCTAssertEqual(oneHour.formattedSpokenTime, "1 hour")
+    }
 }

@@ -37,6 +37,22 @@ public extension TimeInterval {
     }
     
     var formattedSpokenTime: String {
-        "1 hour 54 minutes"
+        var formattedHours = ""
+        var formattedMinutes = ""
+        let space = (hours >= 1 && minutes >= 1) ? " " : ""
+        
+        if hours == 1 {
+            formattedHours = "1 hour"
+        } else if hours > 1 {
+            formattedHours = "\(hours) hours"
+        }
+        
+        if minutes == 1 {
+            formattedMinutes = "1 minute"
+        } else if minutes > 1 {
+            formattedMinutes = "\(minutes) minutes"
+        }
+        
+        return formattedHours + space + formattedMinutes
     }
 }
