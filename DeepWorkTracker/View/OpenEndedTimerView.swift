@@ -7,18 +7,21 @@
 //
 
 import SwiftUI
+import FoundationExtensions
 
-struct TimerView: View {
+struct OpenEndedTimerView: View {
     @Environment(\.presentationMode) var presentationMode
+    var duration: TimeInterval
+    
     
     var body: some View {
-        Text("Presenting a timer")
+        Text(duration.formattedDigitalTime)
             .font(.largeTitle)
     }
 }
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView()
+        OpenEndedTimerView(duration: 60*60)
     }
 }
