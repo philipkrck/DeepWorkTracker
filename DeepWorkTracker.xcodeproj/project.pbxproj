@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A20F0E0C245821B70067CE60 /* FoundationExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = A20F0E0B245821B70067CE60 /* FoundationExtensions */; };
+		A20F0E0E245868D30067CE60 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20F0E0D245868D30067CE60 /* TimerView.swift */; };
 		A2ADAA8E24572D7C00C7EAC1 /* PrepareSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADAA8D24572D7C00C7EAC1 /* PrepareSessionView.swift */; };
 		A2ADAA93245739E000C7EAC1 /* DurationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADAA92245739E000C7EAC1 /* DurationPickerView.swift */; };
 		A2ADAA9524573B7700C7EAC1 /* SetDurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADAA9424573B7700C7EAC1 /* SetDurationView.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		A20F0E09245820FC0067CE60 /* FoundationExtensions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FoundationExtensions; sourceTree = "<group>"; };
+		A20F0E0D245868D30067CE60 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		A2ADAA8D24572D7C00C7EAC1 /* PrepareSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareSessionView.swift; sourceTree = "<group>"; };
 		A2ADAA92245739E000C7EAC1 /* DurationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationPickerView.swift; sourceTree = "<group>"; };
 		A2ADAA9424573B7700C7EAC1 /* SetDurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDurationView.swift; sourceTree = "<group>"; };
@@ -65,19 +67,52 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A20F0E0F245869520067CE60 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				A2ADAA8D24572D7C00C7EAC1 /* PrepareSessionView.swift */,
+				A2ADAA9A245750EE00C7EAC1 /* OpenEndedTimerView.swift */,
+				A20F0E0D245868D30067CE60 /* TimerView.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		A20F0E1024586A5B0067CE60 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				A2ADAA9C245764FA00C7EAC1 /* SessionOverviewView.swift */,
+				A2ADAAA02457692800C7EAC1 /* EditSessionView.swift */,
+				A2ADAAA224576F8A00C7EAC1 /* AddSessionView.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		A20F0E1124586A6A0067CE60 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				A2ADAA9624573C7A00C7EAC1 /* CategoryView.swift */,
+				A2ADAA9824574A8900C7EAC1 /* AddCategoryView.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		A20F0E1224586A760067CE60 /* Duration */ = {
+			isa = PBXGroup;
+			children = (
+				A2ADAA92245739E000C7EAC1 /* DurationPickerView.swift */,
+				A2ADAA9424573B7700C7EAC1 /* SetDurationView.swift */,
+			);
+			path = Duration;
+			sourceTree = "<group>";
+		};
 		A2ADAA8F2457357100C7EAC1 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				A2F9B8032444805300E4F116 /* ContentView.swift */,
-				A2ADAA8D24572D7C00C7EAC1 /* PrepareSessionView.swift */,
-				A2ADAA92245739E000C7EAC1 /* DurationPickerView.swift */,
-				A2ADAA9424573B7700C7EAC1 /* SetDurationView.swift */,
-				A2ADAA9624573C7A00C7EAC1 /* CategoryView.swift */,
-				A2ADAA9824574A8900C7EAC1 /* AddCategoryView.swift */,
-				A2ADAA9A245750EE00C7EAC1 /* OpenEndedTimerView.swift */,
-				A2ADAA9C245764FA00C7EAC1 /* SessionOverviewView.swift */,
-				A2ADAAA02457692800C7EAC1 /* EditSessionView.swift */,
-				A2ADAAA224576F8A00C7EAC1 /* AddSessionView.swift */,
+				A20F0E0F245869520067CE60 /* Timer */,
+				A20F0E1224586A760067CE60 /* Duration */,
+				A20F0E1124586A6A0067CE60 /* Category */,
+				A20F0E1024586A5B0067CE60 /* Session */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,6 +236,7 @@
 				A2ADAA9724573C7A00C7EAC1 /* CategoryView.swift in Sources */,
 				A2ADAA9924574A8900C7EAC1 /* AddCategoryView.swift in Sources */,
 				A2ADAAA12457692800C7EAC1 /* EditSessionView.swift in Sources */,
+				A20F0E0E245868D30067CE60 /* TimerView.swift in Sources */,
 				A2ADAA8E24572D7C00C7EAC1 /* PrepareSessionView.swift in Sources */,
 				A2F9B8022444805300E4F116 /* SceneDelegate.swift in Sources */,
 				A2ADAAA324576F8A00C7EAC1 /* AddSessionView.swift in Sources */,

@@ -68,7 +68,9 @@ struct PrepareSessionView: View {
             }
             .navigationBarTitle("Prepare session")
             .sheet(isPresented: $showingTimerView) {
-                OpenEndedTimerView(duration: 60*60)
+                self.sessionType == .openEnded
+                    ? AnyView(OpenEndedTimerView(category: Category(name: "Default", color: .red)))
+                    : AnyView(TimerView(duration: 5, category: Category(name: "Default", color: .red)))
             }
         }
     }
