@@ -8,15 +8,15 @@
 
 import SwiftUI
 
-struct Session: Identifiable {
+struct Session_Old: Identifiable {
     let id = UUID()
     let date: Date
     let totalTime: Time
-    let category: Category
+    let category: Category_Old
 }
 
-extension Session {
-    static let sample = Session(date: Date(), totalTime: Time(hour: 1, minute: 10), category: Category(name: "Default", color: .red))
+extension Session_Old {
+    static let sample = Session_Old(date: Date(), totalTime: Time(hour: 1, minute: 10), category: Category_Old(name: "Default", color: .red))
     
     var formattedDate: String {
         let formatter = DateFormatter()
@@ -26,7 +26,7 @@ extension Session {
 }
 
 struct SessionOverviewView: View {
-    var sessions: [Session] = [Session.sample]
+    var sessions: [Session_Old] = [Session_Old.sample]
     
     @State private var showingAddSessionView = false
     

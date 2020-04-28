@@ -12,7 +12,7 @@ struct TimerView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var duration: TimeInterval
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    let category: Category
+    let category: Category_Old
     
     var body: some View {
         NavigationView {
@@ -42,6 +42,6 @@ struct TimerView: View {
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView(duration: 60*60 + 43, category: Category(name: "Default", color: .red))
+        TimerView(duration: 60*60 + 43, category: Category_Old(name: "Default", color: .red))
     }
 }

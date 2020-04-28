@@ -8,14 +8,14 @@
 
 import SwiftUI
 
-struct Category: Identifiable, Equatable {
+struct Category_Old: Identifiable, Equatable {
     let id = UUID()
     var name: String
     var color: Color
 }
 
-extension Category {
-    static var defaults = [Category(name: "Default", color: .red), Category(name: "Learn SwiftUI", color: .orange), Category(name: "CS Degree", color: .purple)]
+extension Category_Old {
+    static var defaults = [Category_Old(name: "Default", color: .red), Category_Old(name: "Learn SwiftUI", color: .orange), Category_Old(name: "CS Degree", color: .purple)]
 }
 
 struct ChooseCategoryView: View {
@@ -25,17 +25,17 @@ struct ChooseCategoryView: View {
     
     var body: some View {
         Form {
-            ForEach(0..<Category.defaults.count) { categoryIndex in
+            ForEach(0..<Category_Old.defaults.count) { categoryIndex in
                 HStack {
                     Circle()
                         .frame(width: 16, height: 16)
-                        .foregroundColor(Category.defaults[categoryIndex].color)
-                    Text(Category.defaults[categoryIndex].name)
+                        .foregroundColor(Category_Old.defaults[categoryIndex].color)
+                    Text(Category_Old.defaults[categoryIndex].name)
                     Spacer()
                     
                     if categoryIndex == self.selectedCategoryIndex {
                         Image(systemName: "checkmark")
-                            .foregroundColor(Category.defaults[categoryIndex].color)
+                            .foregroundColor(Category_Old.defaults[categoryIndex].color)
                             .frame(width: 16, height: 16)
                     }
                 }

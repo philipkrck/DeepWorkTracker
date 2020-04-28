@@ -27,8 +27,8 @@ struct PrepareSessionView: View {
         sessionTypes[sessionTypeIndex]
     }
     
-    private var selectedCategory: Category {
-        Category.defaults[selectedCategoryIndex]
+    private var selectedCategory: Category_Old {
+        Category_Old.defaults[selectedCategoryIndex]
     }
 
     var body: some View {
