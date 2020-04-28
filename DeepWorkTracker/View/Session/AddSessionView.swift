@@ -13,12 +13,14 @@ struct AddSessionView: View {
     
     @State private var date = Date()
     
+    @State private var selectedDuration: TimeInterval = 3600 * 50
+    
     var body: some View {
         NavigationView {
             Form {
                 DatePicker("date: ", selection: $date, displayedComponents: .date)
                 
-                NavigationLink(destination: SetDurationView()) {
+                NavigationLink(destination: SetDurationView(timeInterval: $selectedDuration)) {
                         HStack {
                             Text("Set duration")
                             Spacer()

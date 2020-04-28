@@ -19,6 +19,8 @@ struct PrepareSessionView: View {
     @State private var sessionTypeIndex = 0
     @State private var showingTimerView = false
     
+    @State private var selectedDuration: TimeInterval = 50 * 60
+    
     private var sessionType: SessionType {
         sessionTypes[sessionTypeIndex]
     }
@@ -35,11 +37,11 @@ struct PrepareSessionView: View {
                     .pickerStyle(SegmentedPickerStyle())
                     
                     if sessionType == .timer {
-                        NavigationLink(destination: SetDurationView()) {
+                        NavigationLink(destination: SetDurationView(timeInterval: $selectedDuration)) {
                             HStack {
                                 Text("Set duration")
                                 Spacer()
-                                Text("50 min")
+                                Text(selectedDuration.formattedDigitalTime)
                                     .foregroundColor(.secondary)
                             }
                         }

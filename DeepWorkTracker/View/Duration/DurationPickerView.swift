@@ -10,7 +10,7 @@ import SwiftUI
 import UIKit
 
 struct DurationPickerView: UIViewRepresentable {
-    @Binding var time: Time
+    @Binding var timeInterval: TimeInterval
 
     func makeCoordinator() -> DurationPickerView.Coordinator {
         Coordinator(self)
@@ -24,7 +24,7 @@ struct DurationPickerView: UIViewRepresentable {
     }
 
     func updateUIView(_ datePicker: UIDatePicker, context: Context) {
-        let date = Calendar.current.date(bySettingHour: time.hour, minute: time.minute, second: time.second, of: datePicker.date)!
+        let date = Calendar.current.date(bySettingHour: timeInterval.hours, minute: timeInterval.minutes, second: timeInterval.seconds, of: datePicker.date)!
         datePicker.setDate(date, animated: true)
     }
 
@@ -39,7 +39,7 @@ struct DurationPickerView: UIViewRepresentable {
             print(sender.date)
             let calendar = Calendar.current
             let date = sender.date
-            durationPicker.time = Time(hour: calendar.component(.hour, from: date), minute: calendar.component(.minute, from: date), second: calendar.component(.second, from: date))
+            durationPicker.timeInterval = Double(calendar.component(.hour, from: date) * 3600 + calendar.component(.minute, from: date) * 60 + calendar.component(.second, from: date))
         }
     }
 }
@@ -52,6 +52,6 @@ struct Time {
 
 struct DurationPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        DurationPickerView(time: .constant(Time(hour: 0, minute: 25)))
+        DurationPickerView(timeInterval: .constant(3600 * 50))
     }
 }

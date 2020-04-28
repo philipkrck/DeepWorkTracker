@@ -15,7 +15,7 @@ struct EditSessionView: View {
         Form {
             DatePicker("Start date: ", selection: $startDate, displayedComponents: .date)
             
-            NavigationLink(destination: SetDurationView()) {
+            NavigationLink(destination: SetDurationView(timeInterval: .constant(200))) {
                 HStack {
                     Text("Set duration")
                     Spacer()
