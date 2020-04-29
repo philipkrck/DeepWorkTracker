@@ -48,7 +48,6 @@ struct OpenEndedTimerView: View {
     
     private func saveSession() {
         let session = Session(context: managedObjectContext)
-        session.id = UUID()
         session.date = Date()
         session.duration = timeSinceStart
         // todo: add category to session

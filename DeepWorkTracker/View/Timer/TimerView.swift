@@ -49,7 +49,6 @@ struct TimerView: View {
     
     private func saveSession() {
         let session = Session(context: managedObjectContext)
-        session.id = UUID()
         session.date = Date()
         session.duration = duration
         // todo: add category

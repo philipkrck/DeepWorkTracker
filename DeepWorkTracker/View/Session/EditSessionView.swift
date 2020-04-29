@@ -10,36 +10,11 @@ import SwiftUI
 
 struct EditSessionView: View {
     @State private var startDate = Date()
+    @State private var duration: TimeInterval = 3000
     
     var body: some View {
-        Form {
-            DatePicker("Start date: ", selection: $startDate, displayedComponents: .date)
-            
-            NavigationLink(destination: SetDurationView(timeInterval: .constant(200))) {
-                HStack {
-                    Text("Set duration")
-                    Spacer()
-                    Text("50 min")
-                        .foregroundColor(.secondary)
-                }
-            }
-        
-        
-            NavigationLink(destination: ChooseCategoryView(selectedCategoryIndex: .constant(0))) {
-                HStack {
-                    Text("Choose Category")
-                    Spacer()
-                    HStack {
-                        Circle()
-                            .frame(width: 16, height: 16)
-                            .foregroundColor(.red)
-                    }
-                    Text("Default")
-                        .foregroundColor(.secondary)
-                }
-            }
-        }
-        .navigationBarTitle(Text("Edit Session"), displayMode: .inline)
+        ConfigureSessionView(date: $startDate, selectedDuration: $duration)
+            .navigationBarTitle(Text("Edit Session"), displayMode: .inline)
     }
 }
 

@@ -13,51 +13,23 @@ struct AddSessionView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @State private var date = Date()
-    
-    @State private var selectedDuration: TimeInterval = 50 * 60
+    @State private var selectedDuration: TimeInterval = 3000
     
     var body: some View {
         NavigationView {
-            Form {
-                DatePicker("date: ", selection: $date, displayedComponents: .date)
-                
-                NavigationLink(destination: SetDurationView(timeInterval: $selectedDuration)) {
-                    HStack {
-                        Text("Set duration")
-                        Spacer()
-                        Text("50 min")
-                            .foregroundColor(.secondary)
+            ConfigureSessionView(date: $date, selectedDuration: $selectedDuration)
+                .navigationBarTitle("Record Session")
+                .navigationBarItems(trailing:
+                    Button("Save") {
+                        self.saveSession()
+                        self.presentationMode.wrappedValue.dismiss()
                     }
-                }
-                
-                
-                NavigationLink(destination: ChooseCategoryView(selectedCategoryIndex: .constant(0))) {
-                    HStack {
-                        Text("Choose Category")
-                        Spacer()
-                        HStack {
-                            Circle()
-                                .frame(width: 16, height: 16)
-                                .foregroundColor(.red)
-                        }
-                        Text("Default")
-                            .foregroundColor(.secondary)
-                    }
-                }
-            }
-            .navigationBarTitle("Record Session")
-            .navigationBarItems(trailing:
-                Button("Save") {
-                    self.saveSession()
-                    self.presentationMode.wrappedValue.dismiss()
-                }
-            )
+                )
         }
     }
     
     func saveSession() {
         let session = Session(context: managedObjectContext)
-        session.id = UUID()
         session.date = date
         session.duration = selectedDuration
         // todo: add category

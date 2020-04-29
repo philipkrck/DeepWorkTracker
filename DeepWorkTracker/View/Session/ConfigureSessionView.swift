@@ -9,13 +9,43 @@
 import SwiftUI
 
 struct ConfigureSessionView: View {
+    @Binding var date: Date
+    @Binding var selectedDuration: TimeInterval
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            DatePicker("Choose date: ", selection: $date, displayedComponents: .date)
+            
+            NavigationLink(destination: SetDurationView(timeInterval: $selectedDuration)) {
+                HStack {
+                    Text("Set duration")
+                    Spacer()
+                    Text(selectedDuration.formattedSpokenTime)
+                        .foregroundColor(.secondary)
+                }
+            }
+        
+        
+            NavigationLink(destination: ChooseCategoryView(selectedCategoryIndex: .constant(0))) {
+                HStack {
+                    Text("Choose Category")
+                    Spacer()
+                    HStack {
+                        Circle()
+                            .frame(width: 16, height: 16)
+                            .foregroundColor(.red)
+                    }
+                    Text("Default")
+                        .foregroundColor(.secondary)
+                }
+            }
+        }
     }
 }
 
 struct ConfigureSessionView_Previews: PreviewProvider {
     static var previews: some View {
-        ConfigureSessionView()
+        ConfigureSessionView(date: .constant(Date()), selectedDuration: .constant(3000))
     }
 }

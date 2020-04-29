@@ -37,7 +37,7 @@ struct SessionOverviewView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(sessions, id: \.id) { session in
+                ForEach(sessions, id: \.self) { session in
                     NavigationLink(destination: EditSessionView()) {
                         HStack {
                             Circle()

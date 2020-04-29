@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A20F0E0C245821B70067CE60 /* FoundationExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = A20F0E0B245821B70067CE60 /* FoundationExtensions */; };
 		A20F0E0E245868D30067CE60 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20F0E0D245868D30067CE60 /* TimerView.swift */; };
+		A29D0ACE2459A1AA004E5819 /* ConfigureSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D0ACD2459A1AA004E5819 /* ConfigureSessionView.swift */; };
 		A2ADAA8E24572D7C00C7EAC1 /* PrepareSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADAA8D24572D7C00C7EAC1 /* PrepareSessionView.swift */; };
 		A2ADAA93245739E000C7EAC1 /* DurationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADAA92245739E000C7EAC1 /* DurationPickerView.swift */; };
 		A2ADAA9524573B7700C7EAC1 /* SetDurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADAA9424573B7700C7EAC1 /* SetDurationView.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		A20F0E09245820FC0067CE60 /* FoundationExtensions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FoundationExtensions; sourceTree = "<group>"; };
 		A20F0E0D245868D30067CE60 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		A29D0ACD2459A1AA004E5819 /* ConfigureSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureSessionView.swift; sourceTree = "<group>"; };
 		A2ADAA8D24572D7C00C7EAC1 /* PrepareSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareSessionView.swift; sourceTree = "<group>"; };
 		A2ADAA92245739E000C7EAC1 /* DurationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationPickerView.swift; sourceTree = "<group>"; };
 		A2ADAA9424573B7700C7EAC1 /* SetDurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDurationView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				A2ADAA9C245764FA00C7EAC1 /* SessionOverviewView.swift */,
 				A2ADAAA02457692800C7EAC1 /* EditSessionView.swift */,
 				A2ADAAA224576F8A00C7EAC1 /* AddSessionView.swift */,
+				A29D0ACD2459A1AA004E5819 /* ConfigureSessionView.swift */,
 			);
 			path = Session;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				A2ADAA9924574A8900C7EAC1 /* AddCategoryView.swift in Sources */,
 				A2ADAAA12457692800C7EAC1 /* EditSessionView.swift in Sources */,
 				A2E1F0722458A86300DE313D /* DeepWorkTracker.xcdatamodeld in Sources */,
+				A29D0ACE2459A1AA004E5819 /* ConfigureSessionView.swift in Sources */,
 				A20F0E0E245868D30067CE60 /* TimerView.swift in Sources */,
 				A2ADAA8E24572D7C00C7EAC1 /* PrepareSessionView.swift in Sources */,
 				A2F9B8022444805300E4F116 /* SceneDelegate.swift in Sources */,
