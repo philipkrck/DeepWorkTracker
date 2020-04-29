@@ -20,7 +20,7 @@ extension Session {
     @NSManaged public var date: Date?
     @NSManaged public var duration: Double
     @NSManaged public var category: Category?
-    
+
     public var wrappedDate: Date {
         date ?? Date()
     }
@@ -28,5 +28,5 @@ extension Session {
     public var wrappedCategory: Category {
         category ?? Category()
     }
-
+    
 }

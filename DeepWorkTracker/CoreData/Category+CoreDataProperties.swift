@@ -19,23 +19,39 @@ extension Category {
 
     @NSManaged public var colorName: String?
     @NSManaged public var name: String?
-    @NSManaged public var session: NSSet?
+    @NSManaged public var sessions: NSSet?
+    
+    public var wrappedColorName: String {
+        colorName ?? "Unknown color name"
+    }
+    
+    public var wrappedName: String {
+        name ?? "Unknown name"
+    }
+    
+    public var sessionsArray: [Session] {
+        let set = sessions as? Set<Session> ?? []
+        
+        return set.sorted {
+            $0.wrappedDate < $1.wrappedDate
+        }
+    }
 
 }
 
-// MARK: Generated accessors for session
+// MARK: Generated accessors for sessions
 extension Category {
 
-    @objc(addSessionObject:)
-    @NSManaged public func addToSession(_ value: Session)
+    @objc(addSessionsObject:)
+    @NSManaged public func addToSessions(_ value: Session)
 
-    @objc(removeSessionObject:)
-    @NSManaged public func removeFromSession(_ value: Session)
+    @objc(removeSessionsObject:)
+    @NSManaged public func removeFromSessions(_ value: Session)
 
-    @objc(addSession:)
-    @NSManaged public func addToSession(_ values: NSSet)
+    @objc(addSessions:)
+    @NSManaged public func addToSessions(_ values: NSSet)
 
-    @objc(removeSession:)
-    @NSManaged public func removeFromSession(_ values: NSSet)
+    @objc(removeSessions:)
+    @NSManaged public func removeFromSessions(_ values: NSSet)
 
 }

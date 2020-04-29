@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftUI
+import CoreData
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -23,6 +24,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else {
             fatalError("Unable to read managed object context.")
         }
+        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy 
+        
         let contentView = ContentView().environment(\.managedObjectContext, context)
 
         // Use a UIHostingController as window root view controller.
