@@ -51,7 +51,7 @@ struct TimerView: View {
         let session = Session(context: managedObjectContext)
         session.date = Date()
         session.duration = duration
-        // todo: add category
+        session.category = category
         
         self.managedObjectContext.saveIfChanges()
     }

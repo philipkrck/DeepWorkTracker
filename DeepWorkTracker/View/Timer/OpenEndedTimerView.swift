@@ -50,7 +50,7 @@ struct OpenEndedTimerView: View {
         let session = Session(context: managedObjectContext)
         session.date = Date()
         session.duration = timeSinceStart
-        // todo: add category to session
+        session.category = category
         
         managedObjectContext.saveIfChanges()
     }

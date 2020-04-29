@@ -8,26 +8,6 @@
 
 import SwiftUI
 
-// TODO: remove and replace with Core Data model
-struct Session_Old: Identifiable {
-    let id = UUID()
-    let date: Date
-    let totalTime: Time
-    let category: Category_Old
-}
-
-extension Session_Old {
-    static let sample = Session_Old(date: Date(), totalTime: Time(hour: 1, minute: 10), category: Category_Old(name: "Default", color: .red))
-    
-    var formattedDate: String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .long
-        return formatter.string(from: date)
-    }
-}
-
-
-
 struct SessionOverviewView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(entity: Session.entity(), sortDescriptors: []) var sessions: FetchedResults<Session>
@@ -42,9 +22,9 @@ struct SessionOverviewView: View {
                         HStack {
                             Circle()
                                 .frame(width: 16, height: 16)
-                                .foregroundColor(.red) // todo: add color from category
+                                .foregroundColor(session.category?.color ?? .gray) // todo: add color from category
                             VStack(alignment: .leading) {
-                                Text("Category name") // todo: add name from category
+                                Text(session.category?.wrappedName ?? "Missing category name") // todo: add name from category
                                 Text(session.date?.formatted ?? "") // todo: add formatted date
                                     .foregroundColor(.secondary)
                                     .font(.caption)
@@ -75,7 +55,7 @@ struct SessionOverviewView: View {
             let session = sessions[offset]
             managedObjectContext.delete(session)
         }
-        self.managedObjectContext.saveIfChanges()
+        managedObjectContext.saveIfChanges()
     }
 }
 

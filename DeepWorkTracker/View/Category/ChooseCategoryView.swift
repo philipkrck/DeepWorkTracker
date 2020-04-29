@@ -8,16 +8,6 @@
 
 import SwiftUI
 
-struct Category_Old: Identifiable, Equatable {
-    let id = UUID()
-    var name: String
-    var color: Color
-}
-
-extension Category_Old {
-    static var defaults = [Category_Old(name: "Default", color: .red), Category_Old(name: "Learn SwiftUI", color: .orange), Category_Old(name: "CS Degree", color: .purple)]
-}
-
 struct ChooseCategoryView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(entity: Category.entity(), sortDescriptors: []) var categories: FetchedResults<Category> // todo: add sort descriptor
@@ -46,7 +36,7 @@ struct ChooseCategoryView: View {
                     // todo: dismiss view
                 }
             }
-            .onDelete(perform: removeItems)
+            .onDelete(perform: removeCategories)
         }
         .navigationBarTitle("Choose category", displayMode: .inline)
         .navigationBarItems(trailing:
@@ -60,8 +50,12 @@ struct ChooseCategoryView: View {
         }
     }
     
-    func removeItems(at offsets: IndexSet) {
-        // ...
+    func removeCategories(at offsets: IndexSet) {
+        for offset in offsets {
+            let category = categories[offset]
+            managedObjectContext.delete(category)
+        }
+        managedObjectContext.saveIfChanges()
     }
 }
 
