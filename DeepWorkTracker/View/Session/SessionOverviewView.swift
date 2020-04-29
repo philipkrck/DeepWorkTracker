@@ -71,7 +71,11 @@ struct SessionOverviewView: View {
     }
     
     private func removeSession(at offsets: IndexSet) {
-        // todo: remove sessions
+        for offset in offsets {
+            let session = sessions[offset]
+            managedObjectContext.delete(session)
+        }
+        try? managedObjectContext.save()
     }
 }
 
