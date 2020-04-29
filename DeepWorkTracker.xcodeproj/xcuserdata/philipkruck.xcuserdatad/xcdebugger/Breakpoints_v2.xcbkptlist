@@ -30,8 +30,8 @@
             filePath = "DeepWorkTracker/View/Timer/TimerView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "saveSession()"
             landmarkType = "7">
          </BreakpointContent>

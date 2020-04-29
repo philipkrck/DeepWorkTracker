@@ -12,14 +12,20 @@ struct TimerView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.presentationMode) var presentationMode
     
-    @State var duration: TimeInterval
+    let duration: TimeInterval
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     let category: Category_Old
+    
+    @State private var timeIntervalSinceStart: TimeInterval = 0
+    
+    var remainingDuration: TimeInterval {
+        duration - timeIntervalSinceStart
+    }
     
     var body: some View {
         NavigationView {
             VStack {
-                Text(duration.formattedDigitalTime)
+                Text(remainingDuration.formattedDigitalTime)
                     .font(.largeTitle)
                 HStack {
                     Circle()
@@ -30,13 +36,13 @@ struct TimerView: View {
             }
             .navigationBarTitle("Deep Work")
             .onReceive(timer, perform: { time in
-                guard self.duration > 0 else {
+                guard self.timeIntervalSinceStart != self.duration else {
                     self.timer.upstream.connect().cancel()
                     self.saveSession()
                     self.presentationMode.wrappedValue.dismiss()
                     return
                 }
-                self.duration -= 1
+                self.timeIntervalSinceStart += 1
             })
         }
     }
