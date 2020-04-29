@@ -75,7 +75,7 @@ struct SessionOverviewView: View {
             let session = sessions[offset]
             managedObjectContext.delete(session)
         }
-        try? managedObjectContext.save()
+        self.managedObjectContext.saveIfChanges()
     }
 }
 

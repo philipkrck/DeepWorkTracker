@@ -53,7 +53,7 @@ struct TimerView: View {
         session.duration = duration
         // todo: add category
         
-        try? managedObjectContext.save()
+        self.managedObjectContext.saveIfChanges()
     }
 }
 

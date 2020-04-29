@@ -34,7 +34,7 @@ struct AddSessionView: View {
         session.duration = selectedDuration
         // todo: add category
         
-        try? managedObjectContext.save()
+        self.managedObjectContext.saveIfChanges()
     }
 }
 

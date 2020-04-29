@@ -52,7 +52,7 @@ struct OpenEndedTimerView: View {
         session.duration = timeSinceStart
         // todo: add category to session
         
-        try? managedObjectContext.save()
+        managedObjectContext.saveIfChanges()
     }
 }
 

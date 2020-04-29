@@ -10,6 +10,11 @@
 		A20F0E0C245821B70067CE60 /* FoundationExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = A20F0E0B245821B70067CE60 /* FoundationExtensions */; };
 		A20F0E0E245868D30067CE60 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20F0E0D245868D30067CE60 /* TimerView.swift */; };
 		A29D0ACE2459A1AA004E5819 /* ConfigureSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D0ACD2459A1AA004E5819 /* ConfigureSessionView.swift */; };
+		A29D0ADB2459A832004E5819 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D0AD72459A832004E5819 /* Category+CoreDataClass.swift */; };
+		A29D0ADC2459A832004E5819 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D0AD82459A832004E5819 /* Category+CoreDataProperties.swift */; };
+		A29D0ADD2459A832004E5819 /* Session+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D0AD92459A832004E5819 /* Session+CoreDataClass.swift */; };
+		A29D0ADE2459A832004E5819 /* Session+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D0ADA2459A832004E5819 /* Session+CoreDataProperties.swift */; };
+		A29D0AE02459A92E004E5819 /* ManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D0ADF2459A92E004E5819 /* ManagedObjectContext.swift */; };
 		A2ADAA8E24572D7C00C7EAC1 /* PrepareSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADAA8D24572D7C00C7EAC1 /* PrepareSessionView.swift */; };
 		A2ADAA93245739E000C7EAC1 /* DurationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADAA92245739E000C7EAC1 /* DurationPickerView.swift */; };
 		A2ADAA9524573B7700C7EAC1 /* SetDurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADAA9424573B7700C7EAC1 /* SetDurationView.swift */; };
@@ -32,6 +37,11 @@
 		A20F0E09245820FC0067CE60 /* FoundationExtensions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FoundationExtensions; sourceTree = "<group>"; };
 		A20F0E0D245868D30067CE60 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		A29D0ACD2459A1AA004E5819 /* ConfigureSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureSessionView.swift; sourceTree = "<group>"; };
+		A29D0AD72459A832004E5819 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A29D0AD82459A832004E5819 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A29D0AD92459A832004E5819 /* Session+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A29D0ADA2459A832004E5819 /* Session+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A29D0ADF2459A92E004E5819 /* ManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectContext.swift; sourceTree = "<group>"; };
 		A2ADAA8D24572D7C00C7EAC1 /* PrepareSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareSessionView.swift; sourceTree = "<group>"; };
 		A2ADAA92245739E000C7EAC1 /* DurationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationPickerView.swift; sourceTree = "<group>"; };
 		A2ADAA9424573B7700C7EAC1 /* SetDurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDurationView.swift; sourceTree = "<group>"; };
@@ -125,7 +135,12 @@
 		A2E1F0732458A86900DE313D /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				A29D0AD72459A832004E5819 /* Category+CoreDataClass.swift */,
+				A29D0AD82459A832004E5819 /* Category+CoreDataProperties.swift */,
+				A29D0AD92459A832004E5819 /* Session+CoreDataClass.swift */,
+				A29D0ADA2459A832004E5819 /* Session+CoreDataProperties.swift */,
 				A2E1F0702458A86300DE313D /* DeepWorkTracker.xcdatamodeld */,
+				A29D0ADF2459A92E004E5819 /* ManagedObjectContext.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -246,19 +261,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2ADAA9B245750EE00C7EAC1 /* OpenEndedTimerView.swift in Sources */,
+				A29D0ADE2459A832004E5819 /* Session+CoreDataProperties.swift in Sources */,
 				A2F9B8002444805300E4F116 /* AppDelegate.swift in Sources */,
+				A29D0ADD2459A832004E5819 /* Session+CoreDataClass.swift in Sources */,
 				A2ADAA9724573C7A00C7EAC1 /* ChooseCategoryView.swift in Sources */,
 				A2ADAA9924574A8900C7EAC1 /* AddCategoryView.swift in Sources */,
 				A2ADAAA12457692800C7EAC1 /* EditSessionView.swift in Sources */,
 				A2E1F0722458A86300DE313D /* DeepWorkTracker.xcdatamodeld in Sources */,
 				A29D0ACE2459A1AA004E5819 /* ConfigureSessionView.swift in Sources */,
 				A20F0E0E245868D30067CE60 /* TimerView.swift in Sources */,
+				A29D0ADC2459A832004E5819 /* Category+CoreDataProperties.swift in Sources */,
 				A2ADAA8E24572D7C00C7EAC1 /* PrepareSessionView.swift in Sources */,
+				A29D0ADB2459A832004E5819 /* Category+CoreDataClass.swift in Sources */,
 				A2F9B8022444805300E4F116 /* SceneDelegate.swift in Sources */,
 				A2ADAAA324576F8A00C7EAC1 /* AddSessionView.swift in Sources */,
 				A2ADAA9524573B7700C7EAC1 /* SetDurationView.swift in Sources */,
 				A2F9B8042444805300E4F116 /* ContentView.swift in Sources */,
 				A2ADAA9D245764FA00C7EAC1 /* SessionOverviewView.swift in Sources */,
+				A29D0AE02459A92E004E5819 /* ManagedObjectContext.swift in Sources */,
 				A2ADAA93245739E000C7EAC1 /* DurationPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
