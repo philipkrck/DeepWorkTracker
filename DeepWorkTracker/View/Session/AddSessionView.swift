@@ -28,13 +28,13 @@ struct AddSessionView: View {
         }
     }
     
-    func saveSession() {
+    private func saveSession() {
         let session = Session(context: managedObjectContext)
         session.date = date
         session.duration = selectedDuration
         // todo: add category
         
-        self.managedObjectContext.saveIfChanges()
+        managedObjectContext.saveIfChanges()
     }
 }
 

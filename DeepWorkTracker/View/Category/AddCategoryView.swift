@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct AddCategoryView: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.presentationMode) var presentationMode
     
     let colors: [Color] = [.red, .green, .blue, .black, .gray, .orange, .yellow, .purple, .pink]
@@ -39,7 +40,7 @@ struct AddCategoryView: View {
                         return
                     }
                     
-                    // todo: create new category
+                    self.saveCategory()
                     self.presentationMode.wrappedValue.dismiss()
                 }
                 
@@ -48,6 +49,14 @@ struct AddCategoryView: View {
         .alert(isPresented: $showingAlert) {
             Alert(title: Text("Please enter a category name"), dismissButton: .default(Text("OK")))
         }
+    }
+    
+    private func saveCategory() {
+        let category = Category(context: managedObjectContext)
+        category.name = categoryName
+        category.color = color
+        
+        managedObjectContext.saveIfChanges()
     }
 }
 

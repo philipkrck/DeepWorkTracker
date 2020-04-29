@@ -52,7 +52,7 @@ struct PrepareSessionView: View {
                 }
                 
                 Section(header: Text("Category")) {
-                    NavigationLink(destination: ChooseCategoryView(selectedCategory: $selectedCategory)) {
+                    NavigationLink(destination: ChooseCategoryView(selectedCategory: $selectedCategory).environment(\.managedObjectContext, managedObjectContext)) {
                         HStack {
                             Text("Choose Category")
                             Spacer()

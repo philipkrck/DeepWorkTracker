@@ -19,7 +19,8 @@ extension Category_Old {
 }
 
 struct ChooseCategoryView: View {
-    @FetchRequest(entity: Category.entity(), sortDescriptors: []) var categories: FetchedResults<Category>
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(entity: Category.entity(), sortDescriptors: []) var categories: FetchedResults<Category> // todo: add sort descriptor
     
     @Binding var selectedCategory: Category
     @State private var showingAddCategoryView = false
@@ -55,7 +56,7 @@ struct ChooseCategoryView: View {
                 Image(systemName: "plus")
             })
         .sheet(isPresented: $showingAddCategoryView) {
-            AddCategoryView()
+            AddCategoryView().environment(\.managedObjectContext, self.managedObjectContext)
         }
     }
     
