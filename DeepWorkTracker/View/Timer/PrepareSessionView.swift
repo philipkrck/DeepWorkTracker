@@ -15,21 +15,17 @@ enum SessionType: String {
 
 struct PrepareSessionView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(entity: Category.entity(), sortDescriptors: []) var categories: FetchedResults<Category>
     
     @State private var sessionTypes: [SessionType] = [.openEnded, .timer]
     @State private var sessionTypeIndex = 0
     @State private var showingTimerView = false
     
     @State private var selectedDuration: TimeInterval = 5// 50 * 60
-    @State private var selectedCategoryIndex = 0
+    @State var selectedCategory: Category
 
-    
     private var sessionType: SessionType {
         sessionTypes[sessionTypeIndex]
-    }
-    
-    private var selectedCategory: Category_Old {
-        Category_Old.defaults[selectedCategoryIndex]
     }
 
     var body: some View {
@@ -56,7 +52,7 @@ struct PrepareSessionView: View {
                 }
                 
                 Section(header: Text("Category")) {
-                    NavigationLink(destination: ChooseCategoryView(selectedCategoryIndex: $selectedCategoryIndex)) {
+                    NavigationLink(destination: ChooseCategoryView(selectedCategory: $selectedCategory)) {
                         HStack {
                             Text("Choose Category")
                             Spacer()
@@ -65,7 +61,7 @@ struct PrepareSessionView: View {
                                     .frame(width: 16, height: 16)
                                     .foregroundColor(selectedCategory.color)
                             }
-                            Text(selectedCategory.name)
+                            Text(selectedCategory.wrappedName)
                                 .foregroundColor(.secondary)
                         }
                     }
@@ -87,6 +83,6 @@ struct PrepareSessionView: View {
 
 struct PrepareSessionView_Previews: PreviewProvider {
     static var previews: some View {
-        PrepareSessionView()
+        PrepareSessionView(selectedCategory: Category())
     }
 }

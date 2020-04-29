@@ -19,29 +19,30 @@ extension Category_Old {
 }
 
 struct ChooseCategoryView: View {
+    @FetchRequest(entity: Category.entity(), sortDescriptors: []) var categories: FetchedResults<Category>
     
-    @Binding var selectedCategoryIndex: Int
+    @Binding var selectedCategory: Category
     @State private var showingAddCategoryView = false
     
     var body: some View {
         Form {
-            ForEach(0..<Category_Old.defaults.count) { categoryIndex in
+            ForEach(categories, id: \.self) { category in
                 HStack {
                     Circle()
                         .frame(width: 16, height: 16)
-                        .foregroundColor(Category_Old.defaults[categoryIndex].color)
-                    Text(Category_Old.defaults[categoryIndex].name)
+                        .foregroundColor(category.color)
+                    Text(category.wrappedName)
                     Spacer()
                     
-                    if categoryIndex == self.selectedCategoryIndex {
+                    if category == self.selectedCategory {
                         Image(systemName: "checkmark")
-                            .foregroundColor(Category_Old.defaults[categoryIndex].color)
+                            .foregroundColor(category.color)
                             .frame(width: 16, height: 16)
                     }
                 }
                 .onTapGesture {
-                    print("category \(categoryIndex)")
-                    self.selectedCategoryIndex = categoryIndex
+                    self.selectedCategory = category
+                    // todo: dismiss view
                 }
             }
             .onDelete(perform: removeItems)
@@ -65,6 +66,6 @@ struct ChooseCategoryView: View {
 
 struct CategoryView_Previews: PreviewProvider {
     static var previews: some View {
-        ChooseCategoryView(selectedCategoryIndex: .constant(0))
+        ChooseCategoryView(selectedCategory: .constant(Category()))
     }
 }

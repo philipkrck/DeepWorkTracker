@@ -11,6 +11,8 @@ import SwiftUI
 import CoreData
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    
+    static let preloadedKey = "isDefaultCategoryPreloaded"
 
     var window: UIWindow?
 
@@ -24,9 +26,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else {
             fatalError("Unable to read managed object context.")
         }
-        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy 
+        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        preloadDataIfNeeded(in: context)
         
-        let contentView = ContentView().environment(\.managedObjectContext, context)
+        let contentView = ContentView(defaultCategory: defaultCategory(in: context))
+                            .environment(\.managedObjectContext, context)
+                            .environmentObject(defaultCategory(in: context))
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
@@ -35,6 +40,38 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             window.makeKeyAndVisible()
         }
+    }
+    
+    private func preloadDataIfNeeded(in context: NSManagedObjectContext) {
+        // todo: check if data was preloaded
+    
+        let isPreloaded = UserDefaults.standard.bool(forKey: Self.preloadedKey)
+        
+        if !isPreloaded {
+            let defaultCategory = Category(context: context)
+            defaultCategory.color = .gray
+            defaultCategory.name = "Default"
+            
+            context.saveIfChanges()
+            
+            UserDefaults.standard.set(true, forKey: Self.preloadedKey)
+        }
+    
+    }
+    
+    private func defaultCategory(in context: NSManagedObjectContext) -> Category {
+        let request = NSFetchRequest<Category>(entityName: "Category")
+        
+        guard let fetchedResults = try? context.fetch(request) else {
+            fatalError("Could not fetch categories")
+        }
+        
+        for category in fetchedResults {
+            if category.name == "Default" {
+                return category
+            }
+        }
+        fatalError("Could not fetch default category")
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

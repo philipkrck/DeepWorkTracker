@@ -16,7 +16,7 @@ struct OpenEndedTimerView: View {
     
     @State private var timeSinceStart: TimeInterval = 0
     
-    let category: Category_Old
+    let category: Category
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -29,7 +29,7 @@ struct OpenEndedTimerView: View {
                     Circle()
                         .frame(width: 16, height: 16)
                         .foregroundColor(category.color)
-                    Text(category.name)
+                    Text(category.wrappedName)
                 }
             }
             .navigationBarTitle("Deep Work")
@@ -58,6 +58,6 @@ struct OpenEndedTimerView: View {
 
 struct OpenEndedTimerView_Previews: PreviewProvider {
     static var previews: some View {
-        OpenEndedTimerView(category: Category_Old(name: "Default", color: .red))
+        OpenEndedTimerView(category: Category())
     }
 }

@@ -14,7 +14,7 @@ struct TimerView: View {
     
     let duration: TimeInterval
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    let category: Category_Old
+    let category: Category
     
     @State private var timeIntervalSinceStart: TimeInterval = 0
     
@@ -31,7 +31,7 @@ struct TimerView: View {
                     Circle()
                         .frame(width: 16, height: 16)
                         .foregroundColor(category.color)
-                    Text(category.name)
+                    Text(category.wrappedName)
                 }
             }
             .navigationBarTitle("Deep Work")
@@ -59,6 +59,6 @@ struct TimerView: View {
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView(duration: 60*60 + 43, category: Category_Old(name: "Default", color: .red))
+        TimerView(duration: 60*60 + 43, category: Category())
     }
 }

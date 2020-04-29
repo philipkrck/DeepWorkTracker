@@ -11,9 +11,11 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     
+    let defaultCategory: Category
+    
     var body: some View {
         TabView {
-            PrepareSessionView()
+            PrepareSessionView(selectedCategory: defaultCategory)
                 .environment(\.managedObjectContext, managedObjectContext)
                 .tabItem {
                     Image(systemName: "timer")
@@ -43,6 +45,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(defaultCategory: Category())
     }
 }

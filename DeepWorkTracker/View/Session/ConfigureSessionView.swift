@@ -27,7 +27,7 @@ struct ConfigureSessionView: View {
             }
         
         
-            NavigationLink(destination: ChooseCategoryView(selectedCategoryIndex: .constant(0))) {
+            NavigationLink(destination: Text("Add Category View here")) {
                 HStack {
                     Text("Choose Category")
                     Spacer()

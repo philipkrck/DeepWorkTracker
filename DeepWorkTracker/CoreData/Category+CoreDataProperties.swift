@@ -9,7 +9,7 @@
 
 import Foundation
 import CoreData
-
+import SwiftUI
 
 extension Category {
 
@@ -21,10 +21,6 @@ extension Category {
     @NSManaged public var name: String?
     @NSManaged public var sessions: NSSet?
     
-    public var wrappedColorName: String {
-        colorName ?? "Unknown color name"
-    }
-    
     public var wrappedName: String {
         name ?? "Unknown name"
     }
@@ -34,6 +30,54 @@ extension Category {
         
         return set.sorted {
             $0.wrappedDate < $1.wrappedDate
+        }
+    }
+    
+    public var color: Color {
+        get {
+            switch colorName {
+            case "red":
+                return Color.red
+            case "green":
+                return Color.green
+            case "blue":
+                return Color.blue
+            case "black":
+                return Color.black
+            case "gray":
+                return Color.gray
+            case "orange":
+                return Color.orange
+            case "purple":
+                return Color.purple
+            case "pink":
+                return Color.pink
+            default:
+                return Color.black
+            }
+        }
+        
+        set {
+            switch newValue {
+            case .red:
+                colorName = "red"
+            case .green:
+                colorName = "green"
+            case .blue:
+                colorName = "blue"
+            case .black:
+                colorName = "black"
+            case .gray:
+                colorName = "gray"
+            case .orange:
+                colorName = "orange"
+            case .purple:
+                colorName = "purple"
+            case .pink:
+                colorName = "pink"
+            default:
+                colorName = "black"
+            }
         }
     }
 

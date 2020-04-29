@@ -12,7 +12,11 @@ extension NSManagedObjectContext {
     
     func saveIfChanges() {
         if self.hasChanges {
-            try? self.save()
+            do {
+                try self.save()
+            } catch {
+                print("could not save managed object context")
+            }
         }
     }
 }
