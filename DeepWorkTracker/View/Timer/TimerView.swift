@@ -52,6 +52,7 @@ struct TimerView: View {
         session.id = UUID()
         session.date = Date()
         session.duration = duration
+        // todo: add category
         
         try? managedObjectContext.save()
     }

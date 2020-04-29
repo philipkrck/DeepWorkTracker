@@ -9,11 +9,12 @@
 import SwiftUI
 
 struct AddSessionView: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.presentationMode) var presentationMode
     
     @State private var date = Date()
     
-    @State private var selectedDuration: TimeInterval = 3600 * 50
+    @State private var selectedDuration: TimeInterval = 50 * 60
     
     var body: some View {
         NavigationView {
@@ -47,11 +48,21 @@ struct AddSessionView: View {
             .navigationBarTitle("Record Session")
             .navigationBarItems(trailing:
                 Button("Save") {
-                    // todo: create new session
+                    self.saveSession()
                     self.presentationMode.wrappedValue.dismiss()
                 }
             )
         }
+    }
+    
+    func saveSession() {
+        let session = Session(context: managedObjectContext)
+        session.id = UUID()
+        session.date = date
+        session.duration = selectedDuration
+        // todo: add category
+        
+        try? managedObjectContext.save()
     }
 }
 

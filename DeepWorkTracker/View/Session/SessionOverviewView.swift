@@ -65,7 +65,7 @@ struct SessionOverviewView: View {
                     Image(systemName: "plus")
                 })
             .sheet(isPresented: $showingAddSessionView) {
-                AddSessionView()
+                AddSessionView().environment(\.managedObjectContext, self.managedObjectContext)
             }
         }
     }
