@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ChooseCategoryView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
+    @Environment(\.presentationMode) var presentationMode
+    
     @FetchRequest(entity: Category.entity(), sortDescriptors: []) var categories: FetchedResults<Category> // todo: add sort descriptor
     
     @Binding var selectedCategory: Category
@@ -18,22 +20,26 @@ struct ChooseCategoryView: View {
     var body: some View {
         Form {
             ForEach(categories, id: \.self) { category in
-                HStack {
-                    Circle()
-                        .frame(width: 16, height: 16)
-                        .foregroundColor(category.color)
-                    Text(category.wrappedName)
-                    Spacer()
-                    
-                    if category == self.selectedCategory {
-                        Image(systemName: "checkmark")
-                            .foregroundColor(category.color)
-                            .frame(width: 16, height: 16)
-                    }
-                }
-                .onTapGesture {
+                Button(action: {
                     self.selectedCategory = category
-                    // todo: dismiss view
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
+                }) {
+                    HStack {
+                        Circle()
+                            .frame(width: 16, height: 16)
+                            .foregroundColor(category.color)
+                        Text(category.wrappedName)
+                            .foregroundColor(.primary)
+                        Spacer()
+                        
+                        if category == self.selectedCategory {
+                            Image(systemName: "checkmark")
+                                .foregroundColor(category.color)
+                                .frame(width: 16, height: 16)
+                        }
+                    }
                 }
             }
             .onDelete(perform: removeCategories)

@@ -35,8 +35,8 @@ struct OpenEndedTimerView: View {
             .navigationBarTitle("Deep Work")
             .navigationBarItems(trailing:
                 Button("Save") {
+                    self.showNotification()
                     self.saveSession()
-                    
                     self.presentationMode.wrappedValue.dismiss()
                 }
             )
@@ -44,6 +44,21 @@ struct OpenEndedTimerView: View {
         .onReceive(timer) { time in
             self.timeSinceStart += 1
         }
+    }
+    
+    private func showNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "Deep work session complete!"
+        content.subtitle = "You just worked \(timeSinceStart.formattedSpokenTime)"
+        content.sound = UNNotificationSound.default
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+
+        // choose a random identifier
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+        // add our notification request
+        UNUserNotificationCenter.current().add(request)
     }
     
     private func saveSession() {

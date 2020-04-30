@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
@@ -38,6 +39,16 @@ struct ContentView: View {
                     Image(systemName: "gear")
                     Text("Settings")
                 }
+        }
+        .onAppear {
+            // request notification permission // ToDo: think of more subtle logic than on appear
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+                if success {
+                    print("All set!")
+                } else if let error = error {
+                    print(error.localizedDescription)
+                }
+            }
         }
     }
 }

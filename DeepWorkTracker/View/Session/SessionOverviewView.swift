@@ -40,6 +40,7 @@ struct SessionOverviewView: View {
                 }
                 .onDelete(perform: removeSession)
             }
+            .listStyle(GroupedListStyle())
             .navigationBarTitle("Completed Sessions")
             .navigationBarItems(leading: !sessions.isEmpty ? EditButton(): nil, trailing:
                 Button(action: {
