@@ -81,6 +81,13 @@ extension Category {
         }
     }
 
+    public static var mockCategory: Category {
+        let category = Category()
+        category.name = "Default"
+        category.color = .orange
+        return category
+    }
+    
 }
 
 // MARK: Generated accessors for sessions

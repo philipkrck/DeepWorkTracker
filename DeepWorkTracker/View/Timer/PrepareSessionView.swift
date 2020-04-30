@@ -83,6 +83,6 @@ struct PrepareSessionView: View {
 
 struct PrepareSessionView_Previews: PreviewProvider {
     static var previews: some View {
-        PrepareSessionView(selectedCategory: Category())
+        PrepareSessionView(selectedCategory: Category.mockCategory)
     }
 }

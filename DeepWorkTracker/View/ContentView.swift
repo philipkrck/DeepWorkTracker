@@ -22,7 +22,7 @@ struct ContentView: View {
                     Text("Start")
                 }
             
-            SessionOverviewView()
+            SessionOverviewView(selectedCategory: defaultCategory)
                 .tabItem {
                     Image(systemName: "list.dash")
                     Text("Sessions")
@@ -45,6 +45,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(defaultCategory: Category())
+        ContentView(defaultCategory: Category.mockCategory)
     }
 }

@@ -13,6 +13,8 @@ struct SessionOverviewView: View {
     @FetchRequest(entity: Session.entity(), sortDescriptors: []) var sessions: FetchedResults<Session>
     
     @State private var showingAddSessionView = false
+    let selectedCategory: Category
+    
     
     var body: some View {
         NavigationView {
@@ -22,10 +24,11 @@ struct SessionOverviewView: View {
                         HStack {
                             Circle()
                                 .frame(width: 16, height: 16)
-                                .foregroundColor(session.category?.color ?? .gray) // todo: add color from category
+                                .foregroundColor(session.category?.color ?? .gray)
+                            
                             VStack(alignment: .leading) {
-                                Text(session.category?.wrappedName ?? "Missing category name") // todo: add name from category
-                                Text(session.date?.formatted ?? "") // todo: add formatted date
+                                Text(session.category?.wrappedName ?? "Missing category name")
+                                Text(session.date?.formatted ?? "")
                                     .foregroundColor(.secondary)
                                     .font(.caption)
                             }
@@ -45,7 +48,7 @@ struct SessionOverviewView: View {
                     Image(systemName: "plus")
                 })
             .sheet(isPresented: $showingAddSessionView) {
-                AddSessionView().environment(\.managedObjectContext, self.managedObjectContext)
+                AddSessionView(selectedCategory: self.selectedCategory).environment(\.managedObjectContext, self.managedObjectContext)
             }
         }
     }
@@ -61,7 +64,7 @@ struct SessionOverviewView: View {
 
 struct SessionOverviewView_Previews: PreviewProvider {
     static var previews: some View {
-        SessionOverviewView()
+        SessionOverviewView(selectedCategory: Category.mockCategory)
     }
 }
 

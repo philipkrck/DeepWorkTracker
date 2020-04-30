@@ -58,6 +58,6 @@ struct OpenEndedTimerView: View {
 
 struct OpenEndedTimerView_Previews: PreviewProvider {
     static var previews: some View {
-        OpenEndedTimerView(category: Category())
+        OpenEndedTimerView(category: Category.mockCategory)
     }
 }

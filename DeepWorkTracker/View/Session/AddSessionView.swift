@@ -14,10 +14,11 @@ struct AddSessionView: View {
     
     @State private var date = Date()
     @State private var selectedDuration: TimeInterval = 3000
+    @State var selectedCategory: Category
     
     var body: some View {
         NavigationView {
-            ConfigureSessionView(date: $date, selectedDuration: $selectedDuration)
+            ConfigureSessionView(date: $date, selectedDuration: $selectedDuration, selectedCategory: $selectedCategory)
                 .navigationBarTitle("Record Session")
                 .navigationBarItems(trailing:
                     Button("Save") {
@@ -32,7 +33,7 @@ struct AddSessionView: View {
         let session = Session(context: managedObjectContext)
         session.date = date
         session.duration = selectedDuration
-        // todo: add category
+        session.category = selectedCategory
         
         managedObjectContext.saveIfChanges()
     }
@@ -40,6 +41,6 @@ struct AddSessionView: View {
 
 struct AddSessionView_Previews: PreviewProvider {
     static var previews: some View {
-        AddSessionView()
+        AddSessionView(selectedCategory: Category.mockCategory)
     }
 }

@@ -11,9 +11,10 @@ import SwiftUI
 struct EditSessionView: View {
     @State private var startDate = Date()
     @State private var duration: TimeInterval = 3000
+    @State var selectedCategory = Category()
     
     var body: some View {
-        ConfigureSessionView(date: $startDate, selectedDuration: $duration)
+        ConfigureSessionView(date: $startDate, selectedDuration: $duration, selectedCategory: $selectedCategory)
             .navigationBarTitle(Text("Edit Session"), displayMode: .inline)
     }
 }

@@ -59,6 +59,6 @@ struct TimerView: View {
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView(duration: 60*60 + 43, category: Category())
+        TimerView(duration: 60*60 + 43, category: Category.mockCategory)
     }
 }

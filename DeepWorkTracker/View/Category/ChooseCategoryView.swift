@@ -61,6 +61,6 @@ struct ChooseCategoryView: View {
 
 struct CategoryView_Previews: PreviewProvider {
     static var previews: some View {
-        ChooseCategoryView(selectedCategory: .constant(Category()))
+        ChooseCategoryView(selectedCategory: .constant(Category.mockCategory))
     }
 }

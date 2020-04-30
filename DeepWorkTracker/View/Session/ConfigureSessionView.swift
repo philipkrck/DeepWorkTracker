@@ -11,7 +11,7 @@ import SwiftUI
 struct ConfigureSessionView: View {
     @Binding var date: Date
     @Binding var selectedDuration: TimeInterval
-    
+    @Binding var selectedCategory: Category
     
     var body: some View {
         Form {
@@ -27,16 +27,16 @@ struct ConfigureSessionView: View {
             }
         
         
-            NavigationLink(destination: Text("Add Category View here")) {
+            NavigationLink(destination: ChooseCategoryView(selectedCategory: $selectedCategory)) {
                 HStack {
                     Text("Choose Category")
                     Spacer()
                     HStack {
                         Circle()
                             .frame(width: 16, height: 16)
-                            .foregroundColor(.red)
+                            .foregroundColor(selectedCategory.color)
                     }
-                    Text("Default")
+                    Text(selectedCategory.wrappedName)
                         .foregroundColor(.secondary)
                 }
             }
@@ -46,6 +46,6 @@ struct ConfigureSessionView: View {
 
 struct ConfigureSessionView_Previews: PreviewProvider {
     static var previews: some View {
-        ConfigureSessionView(date: .constant(Date()), selectedDuration: .constant(3000))
+        ConfigureSessionView(date: .constant(Date()), selectedDuration: .constant(3000), selectedCategory: .constant(Category.mockCategory))
     }
 }
