@@ -68,6 +68,7 @@ struct PrepareSessionView: View {
                 }
                 
                 Button("Start Session") {
+                    self.hapticFeedback()
                     self.showingTimerView = true
                 }
             }
@@ -78,6 +79,11 @@ struct PrepareSessionView: View {
                     : AnyView(TimerView(duration: self.selectedDuration, category: self.selectedCategory).environment(\.managedObjectContext, self.managedObjectContext))
             }
         }
+    }
+    
+    private func hapticFeedback() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
     }
 }
 

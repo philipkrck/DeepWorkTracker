@@ -22,11 +22,17 @@ struct AddSessionView: View {
                 .navigationBarTitle("Record Session")
                 .navigationBarItems(trailing:
                     Button("Save") {
+                        self.hapticFeedback()
                         self.saveSession()
                         self.presentationMode.wrappedValue.dismiss()
                     }
                 )
         }
+    }
+    
+    private func hapticFeedback() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
     }
     
     private func saveSession() {
