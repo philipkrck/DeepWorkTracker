@@ -16,7 +16,6 @@ struct ContentView: View {
     var body: some View {
         TabView {
             PrepareSessionView(selectedCategory: defaultCategory)
-                .environment(\.managedObjectContext, managedObjectContext)
                 .tabItem {
                     Image(systemName: "timer")
                     Text("Start")

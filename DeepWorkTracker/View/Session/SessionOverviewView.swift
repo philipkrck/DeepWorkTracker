@@ -20,7 +20,7 @@ struct SessionOverviewView: View {
         NavigationView {
             List {
                 ForEach(sessions, id: \.self) { session in
-                    NavigationLink(destination: EditSessionView()) {
+                    NavigationLink(destination: EditSessionView(session: session, category: self.selectedCategory)) {
                         HStack {
                             Circle()
                                 .frame(width: 16, height: 16)
