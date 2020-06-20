@@ -21,7 +21,7 @@ struct PrepareSessionView: View {
     @State private var sessionTypeIndex = 0
     @State private var showingTimerView = false
     
-    @State private var selectedDuration: TimeInterval = 5// 50 * 60
+    @State private var selectedDuration: TimeInterval = 50 * 60
     @State var selectedCategory: Category
 
     private var sessionType: SessionType {
@@ -32,7 +32,7 @@ struct PrepareSessionView: View {
         NavigationView {
             Form {
                 Section(header: Text("Session Type")) {
-                    Picker("One", selection: $sessionTypeIndex.animation()) {
+                    Picker("", selection: $sessionTypeIndex.animation()) {
                         ForEach(0..<sessionTypes.count) {
                             Text("\(self.sessionTypes[$0].rawValue)")
                         }

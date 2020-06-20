@@ -28,7 +28,7 @@ struct ContentView: View {
                     Text("Sessions")
                 }
             
-            Text("Analytics")
+            AnalyticsView()
                 .tabItem {
                     Image(systemName: "chart.pie")
                     Text("Analytics")

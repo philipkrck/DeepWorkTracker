@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		A20F0E0C245821B70067CE60 /* FoundationExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = A20F0E0B245821B70067CE60 /* FoundationExtensions */; };
 		A20F0E0E245868D30067CE60 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20F0E0D245868D30067CE60 /* TimerView.swift */; };
+		A2234E47249E21FE00711D4A /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2234E46249E21FE00711D4A /* AnalyticsView.swift */; };
+		A2234E49249E287A00711D4A /* WeeklyBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2234E48249E287A00711D4A /* WeeklyBarChart.swift */; };
+		A2234E4C249E295A00711D4A /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2234E4B249E295A00711D4A /* BarView.swift */; };
+		A2234E4E249E381000711D4A /* MonthlyBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2234E4D249E381000711D4A /* MonthlyBarChart.swift */; };
 		A29D0ACE2459A1AA004E5819 /* ConfigureSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D0ACD2459A1AA004E5819 /* ConfigureSessionView.swift */; };
 		A29D0AE02459A92E004E5819 /* ManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D0ADF2459A92E004E5819 /* ManagedObjectContext.swift */; };
 		A29D0AE52459AC3B004E5819 /* Session+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D0AE12459AC3B004E5819 /* Session+CoreDataClass.swift */; };
@@ -36,6 +40,10 @@
 /* Begin PBXFileReference section */
 		A20F0E09245820FC0067CE60 /* FoundationExtensions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FoundationExtensions; sourceTree = "<group>"; };
 		A20F0E0D245868D30067CE60 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		A2234E46249E21FE00711D4A /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
+		A2234E48249E287A00711D4A /* WeeklyBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBarChart.swift; sourceTree = "<group>"; };
+		A2234E4B249E295A00711D4A /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
+		A2234E4D249E381000711D4A /* MonthlyBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBarChart.swift; sourceTree = "<group>"; };
 		A29D0ACD2459A1AA004E5819 /* ConfigureSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureSessionView.swift; sourceTree = "<group>"; };
 		A29D0ADF2459A92E004E5819 /* ManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectContext.swift; sourceTree = "<group>"; };
 		A29D0AE12459AC3B004E5819 /* Session+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -120,6 +128,17 @@
 			path = Duration;
 			sourceTree = "<group>";
 		};
+		A2234E4A249E294500711D4A /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				A2234E46249E21FE00711D4A /* AnalyticsView.swift */,
+				A2234E48249E287A00711D4A /* WeeklyBarChart.swift */,
+				A2234E4B249E295A00711D4A /* BarView.swift */,
+				A2234E4D249E381000711D4A /* MonthlyBarChart.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
 		A2ADAA8F2457357100C7EAC1 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +147,7 @@
 				A20F0E1224586A760067CE60 /* Duration */,
 				A20F0E1124586A6A0067CE60 /* Category */,
 				A20F0E1024586A5B0067CE60 /* Session */,
+				A2234E4A249E294500711D4A /* Analytics */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -260,11 +280,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2234E4C249E295A00711D4A /* BarView.swift in Sources */,
 				A29D0AE62459AC3B004E5819 /* Session+CoreDataProperties.swift in Sources */,
+				A2234E49249E287A00711D4A /* WeeklyBarChart.swift in Sources */,
 				A2ADAA9B245750EE00C7EAC1 /* OpenEndedTimerView.swift in Sources */,
 				A2F9B8002444805300E4F116 /* AppDelegate.swift in Sources */,
 				A2ADAA9724573C7A00C7EAC1 /* ChooseCategoryView.swift in Sources */,
 				A2ADAA9924574A8900C7EAC1 /* AddCategoryView.swift in Sources */,
+				A2234E47249E21FE00711D4A /* AnalyticsView.swift in Sources */,
 				A29D0AE72459AC3B004E5819 /* Category+CoreDataClass.swift in Sources */,
 				A2ADAAA12457692800C7EAC1 /* EditSessionView.swift in Sources */,
 				A29D0AE82459AC3B004E5819 /* Category+CoreDataProperties.swift in Sources */,
@@ -275,6 +298,7 @@
 				A2F9B8022444805300E4F116 /* SceneDelegate.swift in Sources */,
 				A2ADAAA324576F8A00C7EAC1 /* AddSessionView.swift in Sources */,
 				A2ADAA9524573B7700C7EAC1 /* SetDurationView.swift in Sources */,
+				A2234E4E249E381000711D4A /* MonthlyBarChart.swift in Sources */,
 				A2F9B8042444805300E4F116 /* ContentView.swift in Sources */,
 				A29D0AE52459AC3B004E5819 /* Session+CoreDataClass.swift in Sources */,
 				A2ADAA9D245764FA00C7EAC1 /* SessionOverviewView.swift in Sources */,
