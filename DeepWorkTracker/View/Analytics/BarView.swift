@@ -9,20 +9,24 @@
 import SwiftUI
 
 struct BarView: View {
+    let index: Int
+    let height: CGFloat
+    let actualMeasure: Int
+    let maxMeasure: Int
     
-    let height: CGFloat = 200
-    var width: CGFloat = 30
-    var percentageFill: CGFloat
+    var barHeight: CGFloat {
+        height * CGFloat(actualMeasure) / CGFloat(maxMeasure)
+    }
     
     var body: some View {
         Capsule()
-            .frame(width: width, height: 200 * percentageFill)
-            .foregroundColor(.primary)
+            .fill(Color.primary)
+            .frame(height: barHeight)
     }
 }
 
 struct BarView_Previews: PreviewProvider {
     static var previews: some View {
-        BarView(percentageFill: 0.5)
+        BarView(index: 1, height: 200, actualMeasure: 100, maxMeasure: 200)
     }
 }

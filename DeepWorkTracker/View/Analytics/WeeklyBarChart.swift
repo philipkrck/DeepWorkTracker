@@ -38,11 +38,21 @@ struct WeeklyBarChart: View {
     private var maxMinutesWorked: Int = 280
     
     var body: some View {
-        HStack(alignment: .bottom, spacing: 16) {
-            ForEach(weeklyData, id: \.self) { dataPoint in
-                VStack {
-                    BarView(percentageFill: CGFloat(dataPoint.minutesWorked) / CGFloat(self.maxMinutesWorked))
-                    Text(dataPoint.weekday)
+        GeometryReader { proxy in
+            HStack(alignment: .bottom, spacing: 16) {
+                ForEach(self.weeklyData.indices) { index in
+                    VStack {
+                        BarView(
+                            index: index,
+                            height: proxy.size.height,
+                            actualMeasure: self.weeklyData[index].minutesWorked,
+                            maxMeasure: self.maxMinutesWorked
+                        )
+                        
+                        Text(self.weeklyData[index].weekday)
+                    }
+                    .transition(.slide)
+                    .animation(.ripple(index: index))
                 }
             }
         }

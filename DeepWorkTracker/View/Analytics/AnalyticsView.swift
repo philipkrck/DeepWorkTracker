@@ -9,13 +9,31 @@
 import SwiftUI
 
 enum BarChartType: String, CaseIterable {
-    case week
-    case month
+    case month = "month"
+    case lastWeek = "last week"
+    case week = "week"
+}
+
+struct Chart: ViewModifier {
+    let width: CGFloat
+    
+    func body(content: Content) -> some View {
+        content
+            .frame(width: width - 48, height: 250)
+            .padding(.horizontal, 24)
+            .transition(.moveAndFade)
+    }
+}
+
+extension View {
+    func chartStyle(width: CGFloat) -> some View {
+        self.modifier(Chart(width: width))
+    }
 }
 
 struct AnalyticsView: View {
     @State private var barChartTypes = BarChartType.allCases
-    @State private var barChartTypeIndex = 1
+    @State private var barChartTypeIndex = 2
     
     private var selectedBarChartType: BarChartType {
         barChartTypes[barChartTypeIndex]
@@ -34,14 +52,20 @@ struct AnalyticsView: View {
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
-                .padding(.horizontal, 24)
+                .padding([.horizontal, .bottom], 24)
                 
-                if selectedBarChartType == .week {
-                    WeeklyBarChart()
-                        .transition(.slide)
-                } else {
-                    MonthlyBarChart()
-                        .transition(.slide)
+                // ToDo: extract bar chart modifiers into view modifier
+                GeometryReader { proxy in
+                    if self.selectedBarChartType == .week {
+                        WeeklyBarChart()
+                            .chartStyle(width: proxy.size.width)
+                    } else if self.selectedBarChartType == .lastWeek {
+                        WeeklyBarChart()
+                            .chartStyle(width: proxy.size.width)
+                    } else {
+                        MonthlyBarChart()
+                            .chartStyle(width: proxy.size.width)
+                    }
                 }
             }
             .navigationBarTitle("Analytics")

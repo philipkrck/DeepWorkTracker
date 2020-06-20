@@ -13,6 +13,8 @@
 		A2234E49249E287A00711D4A /* WeeklyBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2234E48249E287A00711D4A /* WeeklyBarChart.swift */; };
 		A2234E4C249E295A00711D4A /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2234E4B249E295A00711D4A /* BarView.swift */; };
 		A2234E4E249E381000711D4A /* MonthlyBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2234E4D249E381000711D4A /* MonthlyBarChart.swift */; };
+		A2635B1B249E617D005EA26B /* Animation+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2635B1A249E617D005EA26B /* Animation+extension.swift */; };
+		A27EAF70249E668A00AF59EE /* Transition+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27EAF6F249E668A00AF59EE /* Transition+extension.swift */; };
 		A29D0ACE2459A1AA004E5819 /* ConfigureSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D0ACD2459A1AA004E5819 /* ConfigureSessionView.swift */; };
 		A29D0AE02459A92E004E5819 /* ManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D0ADF2459A92E004E5819 /* ManagedObjectContext.swift */; };
 		A29D0AE52459AC3B004E5819 /* Session+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D0AE12459AC3B004E5819 /* Session+CoreDataClass.swift */; };
@@ -44,6 +46,8 @@
 		A2234E48249E287A00711D4A /* WeeklyBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBarChart.swift; sourceTree = "<group>"; };
 		A2234E4B249E295A00711D4A /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 		A2234E4D249E381000711D4A /* MonthlyBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBarChart.swift; sourceTree = "<group>"; };
+		A2635B1A249E617D005EA26B /* Animation+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animation+extension.swift"; sourceTree = "<group>"; };
+		A27EAF6F249E668A00AF59EE /* Transition+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transition+extension.swift"; sourceTree = "<group>"; };
 		A29D0ACD2459A1AA004E5819 /* ConfigureSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureSessionView.swift; sourceTree = "<group>"; };
 		A29D0ADF2459A92E004E5819 /* ManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectContext.swift; sourceTree = "<group>"; };
 		A29D0AE12459AC3B004E5819 /* Session+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -133,15 +137,25 @@
 			children = (
 				A2234E46249E21FE00711D4A /* AnalyticsView.swift */,
 				A2234E48249E287A00711D4A /* WeeklyBarChart.swift */,
-				A2234E4B249E295A00711D4A /* BarView.swift */,
 				A2234E4D249E381000711D4A /* MonthlyBarChart.swift */,
+				A2234E4B249E295A00711D4A /* BarView.swift */,
 			);
 			path = Analytics;
+			sourceTree = "<group>";
+		};
+		A2635B19249E616E005EA26B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A2635B1A249E617D005EA26B /* Animation+extension.swift */,
+				A27EAF6F249E668A00AF59EE /* Transition+extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A2ADAA8F2457357100C7EAC1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A2635B19249E616E005EA26B /* Extensions */,
 				A2F9B8032444805300E4F116 /* ContentView.swift */,
 				A20F0E0F245869520067CE60 /* Timer */,
 				A20F0E1224586A760067CE60 /* Duration */,
@@ -289,6 +303,8 @@
 				A2ADAA9924574A8900C7EAC1 /* AddCategoryView.swift in Sources */,
 				A2234E47249E21FE00711D4A /* AnalyticsView.swift in Sources */,
 				A29D0AE72459AC3B004E5819 /* Category+CoreDataClass.swift in Sources */,
+				A2635B1B249E617D005EA26B /* Animation+extension.swift in Sources */,
+				A27EAF70249E668A00AF59EE /* Transition+extension.swift in Sources */,
 				A2ADAAA12457692800C7EAC1 /* EditSessionView.swift in Sources */,
 				A29D0AE82459AC3B004E5819 /* Category+CoreDataProperties.swift in Sources */,
 				A2E1F0722458A86300DE313D /* DeepWorkTracker.xcdatamodeld in Sources */,

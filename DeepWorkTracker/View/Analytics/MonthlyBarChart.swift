@@ -5,7 +5,6 @@
 //  Created by Philip Krück on 20.06.20.
 //  Copyright © 2020 Philip Krück. All rights reserved.
 //
-
 import SwiftUI
 
 struct MonthlyBarChart: View {
@@ -45,11 +44,17 @@ struct MonthlyBarChart: View {
     private var maxMinutesWorked: Int = 280
     
     var body: some View {
-        HStack(alignment: .bottom, spacing: 3) {
-            ForEach(monthlyData, id: \.self) { dataPoint in
-                VStack {
-                    BarView(width: 7, percentageFill: CGFloat(dataPoint.minutesWorked) / CGFloat(self.maxMinutesWorked))
-                        .padding(.top, 24)
+        GeometryReader { proxy in
+            HStack(alignment: .bottom, spacing: proxy.size.width / 120) {
+                ForEach(self.monthlyData.indices) { index in
+                    BarView(
+                        index: index,
+                        height: proxy.size.height,
+                        actualMeasure: self.monthlyData[index].minutesWorked,
+                        maxMeasure: self.maxMinutesWorked
+                    )
+                        .transition(.slide)
+                        .animation(.ripple(index: index, speedFactor: 4))
                 }
             }
         }
