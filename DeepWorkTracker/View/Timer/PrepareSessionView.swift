@@ -8,11 +8,6 @@
 
 import SwiftUI
 
-enum SessionType: String {
-    case openEnded = "Open Ended"
-    case timer = "Timer"
-}
-
 struct PrepareSessionView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(entity: Category.entity(), sortDescriptors: []) var categories: FetchedResults<Category>

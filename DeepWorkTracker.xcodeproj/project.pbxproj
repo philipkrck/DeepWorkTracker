@@ -15,6 +15,31 @@
 		A2234E4E249E381000711D4A /* MonthlyBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2234E4D249E381000711D4A /* MonthlyBarChart.swift */; };
 		A2635B1B249E617D005EA26B /* Animation+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2635B1A249E617D005EA26B /* Animation+extension.swift */; };
 		A27EAF70249E668A00AF59EE /* Transition+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27EAF6F249E668A00AF59EE /* Transition+extension.swift */; };
+		A27EAFD4249F7DC300AF59EE /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A27EAFD2249F7DC300AF59EE /* Interface.storyboard */; };
+		A27EAFD6249F7DC500AF59EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A27EAFD5249F7DC500AF59EE /* Assets.xcassets */; };
+		A27EAFDD249F7DC500AF59EE /* DeepWorkTrackerWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A27EAFDC249F7DC500AF59EE /* DeepWorkTrackerWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A27EAFE2249F7DC500AF59EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27EAFE1249F7DC500AF59EE /* ContentView.swift */; };
+		A27EAFE4249F7DC500AF59EE /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27EAFE3249F7DC500AF59EE /* HostingController.swift */; };
+		A27EAFE6249F7DC500AF59EE /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27EAFE5249F7DC500AF59EE /* ExtensionDelegate.swift */; };
+		A27EAFE8249F7DC500AF59EE /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27EAFE7249F7DC500AF59EE /* NotificationController.swift */; };
+		A27EAFEA249F7DC500AF59EE /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27EAFE9249F7DC500AF59EE /* NotificationView.swift */; };
+		A27EAFEC249F7DC600AF59EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A27EAFEB249F7DC600AF59EE /* Assets.xcassets */; };
+		A27EAFEF249F7DC600AF59EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A27EAFEE249F7DC600AF59EE /* Preview Assets.xcassets */; };
+		A27EAFF4249F7DC600AF59EE /* DeepWorkTrackerWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A27EAFD0249F7DC200AF59EE /* DeepWorkTrackerWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A27EB007249F7FE500AF59EE /* FoundationExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = A27EB006249F7FE500AF59EE /* FoundationExtensions */; };
+		A27EB009249F833000AF59EE /* SessionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27EB008249F833000AF59EE /* SessionType.swift */; };
+		A27EB00A249F833800AF59EE /* SessionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27EB008249F833000AF59EE /* SessionType.swift */; };
+		A2825A8924A0C37600EA4043 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2825A8824A0C37600EA4043 /* AppDelegate.swift */; };
+		A2825A8B24A0C37600EA4043 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2825A8A24A0C37600EA4043 /* ContentView.swift */; };
+		A2825A8D24A0C37600EA4043 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2825A8C24A0C37600EA4043 /* Assets.xcassets */; };
+		A2825A9024A0C37600EA4043 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2825A8F24A0C37600EA4043 /* Preview Assets.xcassets */; };
+		A2825A9324A0C37600EA4043 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2825A9124A0C37600EA4043 /* Main.storyboard */; };
+		A2825A9D24A0C45000EA4043 /* FoundationExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = A2825A9C24A0C45000EA4043 /* FoundationExtensions */; };
+		A2825A9E24A0C47300EA4043 /* Session+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D0AE12459AC3B004E5819 /* Session+CoreDataClass.swift */; };
+		A2825A9F24A0C47300EA4043 /* Session+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D0AE22459AC3B004E5819 /* Session+CoreDataProperties.swift */; };
+		A2825AA024A0C47300EA4043 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D0AE32459AC3B004E5819 /* Category+CoreDataClass.swift */; };
+		A2825AA124A0C47300EA4043 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D0AE42459AC3B004E5819 /* Category+CoreDataProperties.swift */; };
+		A2825AA224A0C47600EA4043 /* ManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D0ADF2459A92E004E5819 /* ManagedObjectContext.swift */; };
 		A29D0ACE2459A1AA004E5819 /* ConfigureSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D0ACD2459A1AA004E5819 /* ConfigureSessionView.swift */; };
 		A29D0AE02459A92E004E5819 /* ManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D0ADF2459A92E004E5819 /* ManagedObjectContext.swift */; };
 		A29D0AE52459AC3B004E5819 /* Session+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29D0AE12459AC3B004E5819 /* Session+CoreDataClass.swift */; };
@@ -39,6 +64,48 @@
 		A2F9B80C2444805500E4F116 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2F9B80A2444805500E4F116 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A27EAFDE249F7DC500AF59EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A2F9B7F42444805300E4F116 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A27EAFDB249F7DC500AF59EE;
+			remoteInfo = "DeepWorkTrackerWatch Extension";
+		};
+		A27EAFF2249F7DC600AF59EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A2F9B7F42444805300E4F116 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A27EAFCF249F7DC200AF59EE;
+			remoteInfo = DeepWorkTrackerWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A27EAFF5249F7DC600AF59EE /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				A27EAFF4249F7DC600AF59EE /* DeepWorkTrackerWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A27EAFF8249F7DC600AF59EE /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A27EAFDD249F7DC500AF59EE /* DeepWorkTrackerWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		A20F0E09245820FC0067CE60 /* FoundationExtensions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FoundationExtensions; sourceTree = "<group>"; };
 		A20F0E0D245868D30067CE60 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -48,6 +115,29 @@
 		A2234E4D249E381000711D4A /* MonthlyBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBarChart.swift; sourceTree = "<group>"; };
 		A2635B1A249E617D005EA26B /* Animation+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animation+extension.swift"; sourceTree = "<group>"; };
 		A27EAF6F249E668A00AF59EE /* Transition+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transition+extension.swift"; sourceTree = "<group>"; };
+		A27EAFD0249F7DC200AF59EE /* DeepWorkTrackerWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepWorkTrackerWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A27EAFD3249F7DC300AF59EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		A27EAFD5249F7DC500AF59EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A27EAFD7249F7DC500AF59EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A27EAFDC249F7DC500AF59EE /* DeepWorkTrackerWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DeepWorkTrackerWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A27EAFE1249F7DC500AF59EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A27EAFE3249F7DC500AF59EE /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		A27EAFE5249F7DC500AF59EE /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		A27EAFE7249F7DC500AF59EE /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		A27EAFE9249F7DC500AF59EE /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		A27EAFEB249F7DC600AF59EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A27EAFEE249F7DC600AF59EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A27EAFF0249F7DC600AF59EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A27EAFF1249F7DC600AF59EE /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		A27EB008249F833000AF59EE /* SessionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionType.swift; sourceTree = "<group>"; };
+		A2825A8624A0C37600EA4043 /* DeepWorkTrackerMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepWorkTrackerMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2825A8824A0C37600EA4043 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A2825A8A24A0C37600EA4043 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A2825A8C24A0C37600EA4043 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A2825A8F24A0C37600EA4043 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A2825A9224A0C37600EA4043 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A2825A9424A0C37600EA4043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2825A9524A0C37600EA4043 /* DeepWorkTrackerMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeepWorkTrackerMac.entitlements; sourceTree = "<group>"; };
 		A29D0ACD2459A1AA004E5819 /* ConfigureSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureSessionView.swift; sourceTree = "<group>"; };
 		A29D0ADF2459A92E004E5819 /* ManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectContext.swift; sourceTree = "<group>"; };
 		A29D0AE12459AC3B004E5819 /* Session+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -75,6 +165,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A27EAFD9249F7DC500AF59EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A27EB007249F7FE500AF59EE /* FoundationExtensions in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2825A8324A0C37600EA4043 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2825A9D24A0C45000EA4043 /* FoundationExtensions in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A2F9B7F92444805300E4F116 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -152,6 +258,62 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		A27EAFD1249F7DC200AF59EE /* DeepWorkTrackerWatch */ = {
+			isa = PBXGroup;
+			children = (
+				A27EAFD2249F7DC300AF59EE /* Interface.storyboard */,
+				A27EAFD5249F7DC500AF59EE /* Assets.xcassets */,
+				A27EAFD7249F7DC500AF59EE /* Info.plist */,
+			);
+			path = DeepWorkTrackerWatch;
+			sourceTree = "<group>";
+		};
+		A27EAFE0249F7DC500AF59EE /* DeepWorkTrackerWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A27EAFE1249F7DC500AF59EE /* ContentView.swift */,
+				A27EAFE3249F7DC500AF59EE /* HostingController.swift */,
+				A27EAFE5249F7DC500AF59EE /* ExtensionDelegate.swift */,
+				A27EAFE7249F7DC500AF59EE /* NotificationController.swift */,
+				A27EAFE9249F7DC500AF59EE /* NotificationView.swift */,
+				A27EAFEB249F7DC600AF59EE /* Assets.xcassets */,
+				A27EAFF0249F7DC600AF59EE /* Info.plist */,
+				A27EAFF1249F7DC600AF59EE /* PushNotificationPayload.apns */,
+				A27EAFED249F7DC600AF59EE /* Preview Content */,
+			);
+			path = "DeepWorkTrackerWatch Extension";
+			sourceTree = "<group>";
+		};
+		A27EAFED249F7DC600AF59EE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A27EAFEE249F7DC600AF59EE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A2825A8724A0C37600EA4043 /* DeepWorkTrackerMac */ = {
+			isa = PBXGroup;
+			children = (
+				A2825A8824A0C37600EA4043 /* AppDelegate.swift */,
+				A2825A8A24A0C37600EA4043 /* ContentView.swift */,
+				A2825A8C24A0C37600EA4043 /* Assets.xcassets */,
+				A2825A9124A0C37600EA4043 /* Main.storyboard */,
+				A2825A9424A0C37600EA4043 /* Info.plist */,
+				A2825A9524A0C37600EA4043 /* DeepWorkTrackerMac.entitlements */,
+				A2825A8E24A0C37600EA4043 /* Preview Content */,
+			);
+			path = DeepWorkTrackerMac;
+			sourceTree = "<group>";
+		};
+		A2825A8E24A0C37600EA4043 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A2825A8F24A0C37600EA4043 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		A2ADAA8F2457357100C7EAC1 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +346,9 @@
 			children = (
 				A20F0E09245820FC0067CE60 /* FoundationExtensions */,
 				A2F9B7FE2444805300E4F116 /* DeepWorkTracker */,
+				A27EAFD1249F7DC200AF59EE /* DeepWorkTrackerWatch */,
+				A27EAFE0249F7DC500AF59EE /* DeepWorkTrackerWatch Extension */,
+				A2825A8724A0C37600EA4043 /* DeepWorkTrackerMac */,
 				A2F9B7FD2444805300E4F116 /* Products */,
 				A20F0E0A245821B70067CE60 /* Frameworks */,
 			);
@@ -193,6 +358,9 @@
 			isa = PBXGroup;
 			children = (
 				A2F9B7FC2444805300E4F116 /* DeepWorkTracker.app */,
+				A27EAFD0249F7DC200AF59EE /* DeepWorkTrackerWatch.app */,
+				A27EAFDC249F7DC500AF59EE /* DeepWorkTrackerWatch Extension.appex */,
+				A2825A8624A0C37600EA4043 /* DeepWorkTrackerMac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -202,12 +370,13 @@
 			children = (
 				A2F9B7FF2444805300E4F116 /* AppDelegate.swift */,
 				A2F9B8012444805300E4F116 /* SceneDelegate.swift */,
+				A27EB008249F833000AF59EE /* SessionType.swift */,
 				A2ADAA8F2457357100C7EAC1 /* View */,
+				A2E1F0732458A86900DE313D /* CoreData */,
 				A2F9B8052444805500E4F116 /* Assets.xcassets */,
 				A2F9B80A2444805500E4F116 /* LaunchScreen.storyboard */,
 				A2F9B80D2444805500E4F116 /* Info.plist */,
 				A2F9B8072444805500E4F116 /* Preview Content */,
-				A2E1F0732458A86900DE313D /* CoreData */,
 			);
 			path = DeepWorkTracker;
 			sourceTree = "<group>";
@@ -223,6 +392,63 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A27EAFCF249F7DC200AF59EE /* DeepWorkTrackerWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A27EAFFC249F7DC600AF59EE /* Build configuration list for PBXNativeTarget "DeepWorkTrackerWatch" */;
+			buildPhases = (
+				A27EAFCE249F7DC200AF59EE /* Resources */,
+				A27EAFF8249F7DC600AF59EE /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A27EAFDF249F7DC500AF59EE /* PBXTargetDependency */,
+			);
+			name = DeepWorkTrackerWatch;
+			productName = DeepWorkTrackerWatch;
+			productReference = A27EAFD0249F7DC200AF59EE /* DeepWorkTrackerWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		A27EAFDB249F7DC500AF59EE /* DeepWorkTrackerWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A27EAFFB249F7DC600AF59EE /* Build configuration list for PBXNativeTarget "DeepWorkTrackerWatch Extension" */;
+			buildPhases = (
+				A27EAFD8249F7DC500AF59EE /* Sources */,
+				A27EAFD9249F7DC500AF59EE /* Frameworks */,
+				A27EAFDA249F7DC500AF59EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DeepWorkTrackerWatch Extension";
+			packageProductDependencies = (
+				A27EB006249F7FE500AF59EE /* FoundationExtensions */,
+			);
+			productName = "DeepWorkTrackerWatch Extension";
+			productReference = A27EAFDC249F7DC500AF59EE /* DeepWorkTrackerWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		A2825A8524A0C37600EA4043 /* DeepWorkTrackerMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2825A9824A0C37600EA4043 /* Build configuration list for PBXNativeTarget "DeepWorkTrackerMac" */;
+			buildPhases = (
+				A2825A8224A0C37600EA4043 /* Sources */,
+				A2825A8324A0C37600EA4043 /* Frameworks */,
+				A2825A8424A0C37600EA4043 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DeepWorkTrackerMac;
+			packageProductDependencies = (
+				A2825A9C24A0C45000EA4043 /* FoundationExtensions */,
+			);
+			productName = DeepWorkTrackerMac;
+			productReference = A2825A8624A0C37600EA4043 /* DeepWorkTrackerMac.app */;
+			productType = "com.apple.product-type.application";
+		};
 		A2F9B7FB2444805300E4F116 /* DeepWorkTracker */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A2F9B8102444805500E4F116 /* Build configuration list for PBXNativeTarget "DeepWorkTracker" */;
@@ -230,10 +456,12 @@
 				A2F9B7F82444805300E4F116 /* Sources */,
 				A2F9B7F92444805300E4F116 /* Frameworks */,
 				A2F9B7FA2444805300E4F116 /* Resources */,
+				A27EAFF5249F7DC600AF59EE /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A27EAFF3249F7DC600AF59EE /* PBXTargetDependency */,
 			);
 			name = DeepWorkTracker;
 			packageProductDependencies = (
@@ -249,10 +477,19 @@
 		A2F9B7F42444805300E4F116 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Philip Krück";
 				TargetAttributes = {
+					A27EAFCF249F7DC200AF59EE = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					A27EAFDB249F7DC500AF59EE = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					A2825A8524A0C37600EA4043 = {
+						CreatedOnToolsVersion = 11.5;
+					};
 					A2F9B7FB2444805300E4F116 = {
 						CreatedOnToolsVersion = 11.4;
 					};
@@ -272,11 +509,42 @@
 			projectRoot = "";
 			targets = (
 				A2F9B7FB2444805300E4F116 /* DeepWorkTracker */,
+				A27EAFCF249F7DC200AF59EE /* DeepWorkTrackerWatch */,
+				A27EAFDB249F7DC500AF59EE /* DeepWorkTrackerWatch Extension */,
+				A2825A8524A0C37600EA4043 /* DeepWorkTrackerMac */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A27EAFCE249F7DC200AF59EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A27EAFD6249F7DC500AF59EE /* Assets.xcassets in Resources */,
+				A27EAFD4249F7DC300AF59EE /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A27EAFDA249F7DC500AF59EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A27EAFEF249F7DC600AF59EE /* Preview Assets.xcassets in Resources */,
+				A27EAFEC249F7DC600AF59EE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2825A8424A0C37600EA4043 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2825A9324A0C37600EA4043 /* Main.storyboard in Resources */,
+				A2825A9024A0C37600EA4043 /* Preview Assets.xcassets in Resources */,
+				A2825A8D24A0C37600EA4043 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A2F9B7FA2444805300E4F116 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -290,11 +558,39 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A27EAFD8249F7DC500AF59EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A27EAFE4249F7DC500AF59EE /* HostingController.swift in Sources */,
+				A27EAFE2249F7DC500AF59EE /* ContentView.swift in Sources */,
+				A27EAFE8249F7DC500AF59EE /* NotificationController.swift in Sources */,
+				A27EAFE6249F7DC500AF59EE /* ExtensionDelegate.swift in Sources */,
+				A27EB00A249F833800AF59EE /* SessionType.swift in Sources */,
+				A27EAFEA249F7DC500AF59EE /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2825A8224A0C37600EA4043 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2825AA124A0C47300EA4043 /* Category+CoreDataProperties.swift in Sources */,
+				A2825AA024A0C47300EA4043 /* Category+CoreDataClass.swift in Sources */,
+				A2825A9E24A0C47300EA4043 /* Session+CoreDataClass.swift in Sources */,
+				A2825A8B24A0C37600EA4043 /* ContentView.swift in Sources */,
+				A2825A8924A0C37600EA4043 /* AppDelegate.swift in Sources */,
+				A2825AA224A0C47600EA4043 /* ManagedObjectContext.swift in Sources */,
+				A2825A9F24A0C47300EA4043 /* Session+CoreDataProperties.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A2F9B7F82444805300E4F116 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A2234E4C249E295A00711D4A /* BarView.swift in Sources */,
+				A27EB009249F833000AF59EE /* SessionType.swift in Sources */,
 				A29D0AE62459AC3B004E5819 /* Session+CoreDataProperties.swift in Sources */,
 				A2234E49249E287A00711D4A /* WeeklyBarChart.swift in Sources */,
 				A2ADAA9B245750EE00C7EAC1 /* OpenEndedTimerView.swift in Sources */,
@@ -325,7 +621,36 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		A27EAFDF249F7DC500AF59EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A27EAFDB249F7DC500AF59EE /* DeepWorkTrackerWatch Extension */;
+			targetProxy = A27EAFDE249F7DC500AF59EE /* PBXContainerItemProxy */;
+		};
+		A27EAFF3249F7DC600AF59EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A27EAFCF249F7DC200AF59EE /* DeepWorkTrackerWatch */;
+			targetProxy = A27EAFF2249F7DC600AF59EE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		A27EAFD2249F7DC300AF59EE /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A27EAFD3249F7DC300AF59EE /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		A2825A9124A0C37600EA4043 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A2825A9224A0C37600EA4043 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		A2F9B80A2444805500E4F116 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -337,6 +662,140 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A27EAFF6249F7DC600AF59EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZKNRVN92RA;
+				IBSC_MODULE = DeepWorkTrackerWatch_Extension;
+				INFOPLIST_FILE = DeepWorkTrackerWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = de.philip.DeepWorkTracker.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		A27EAFF7249F7DC600AF59EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZKNRVN92RA;
+				IBSC_MODULE = DeepWorkTrackerWatch_Extension;
+				INFOPLIST_FILE = DeepWorkTrackerWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = de.philip.DeepWorkTracker.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		A27EAFF9249F7DC600AF59EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"DeepWorkTrackerWatch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 42666696DJ;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "DeepWorkTrackerWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.philip.DeepWorkTracker.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		A27EAFFA249F7DC600AF59EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"DeepWorkTrackerWatch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 42666696DJ;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "DeepWorkTrackerWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.philip.DeepWorkTracker.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		A2825A9624A0C37600EA4043 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DeepWorkTrackerMac/DeepWorkTrackerMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"DeepWorkTrackerMac/Preview Content\"";
+				DEVELOPMENT_TEAM = 42666696DJ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = DeepWorkTrackerMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = de.philip.krueck.DeepWorkTrackerMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A2825A9724A0C37600EA4043 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DeepWorkTrackerMac/DeepWorkTrackerMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"DeepWorkTrackerMac/Preview Content\"";
+				DEVELOPMENT_TEAM = 42666696DJ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = DeepWorkTrackerMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = de.philip.krueck.DeepWorkTrackerMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		A2F9B80E2444805500E4F116 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -494,6 +953,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A27EAFFB249F7DC600AF59EE /* Build configuration list for PBXNativeTarget "DeepWorkTrackerWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A27EAFF9249F7DC600AF59EE /* Debug */,
+				A27EAFFA249F7DC600AF59EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A27EAFFC249F7DC600AF59EE /* Build configuration list for PBXNativeTarget "DeepWorkTrackerWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A27EAFF6249F7DC600AF59EE /* Debug */,
+				A27EAFF7249F7DC600AF59EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2825A9824A0C37600EA4043 /* Build configuration list for PBXNativeTarget "DeepWorkTrackerMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2825A9624A0C37600EA4043 /* Debug */,
+				A2825A9724A0C37600EA4043 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A2F9B7F72444805300E4F116 /* Build configuration list for PBXProject "DeepWorkTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -516,6 +1002,14 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		A20F0E0B245821B70067CE60 /* FoundationExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FoundationExtensions;
+		};
+		A27EB006249F7FE500AF59EE /* FoundationExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FoundationExtensions;
+		};
+		A2825A9C24A0C45000EA4043 /* FoundationExtensions */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = FoundationExtensions;
 		};
